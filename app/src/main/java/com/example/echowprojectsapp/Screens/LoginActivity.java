@@ -29,8 +29,8 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        mAuth = FirebaseAuth.getInstance();
 
+        mAuth = FirebaseAuth.getInstance();
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser != null) {
             startActivity(new Intent(LoginActivity.this, HomeActivity.class));
@@ -48,7 +48,7 @@ public class LoginActivity extends AppCompatActivity {
                 String passUser = password.getText().toString().trim();
 
                 if (emailUser.isEmpty() && passUser.isEmpty()){
-                    Toast.makeText(LoginActivity.this, "amFavor llenar los cpos", Toast.LENGTH_LONG).show();
+                    Toast.makeText(LoginActivity.this, "Favor llenar los campos", Toast.LENGTH_LONG).show();
                 } else {
                     loginUser(emailUser, passUser);
                 }
