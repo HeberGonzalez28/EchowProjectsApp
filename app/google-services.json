@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "306413032382",
+    "project_id": "echowprojectsapp-1bf21",
+    "storage_bucket": "echowprojectsapp-1bf21.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:306413032382:android:b7afc1078924c6f2d39fef",
+        "android_client_info": {
+          "package_name": "com.example.echowprojectsapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCDwUJSbFsM8cXCapyTe8pMVOV3i61d8z0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
