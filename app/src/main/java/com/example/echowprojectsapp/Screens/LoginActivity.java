@@ -31,11 +31,11 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         mAuth = FirebaseAuth.getInstance();
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        if (currentUser != null) {
-            startActivity(new Intent(LoginActivity.this, HomeActivity.class));
-            finish();
-        }
+        //FirebaseUser currentUser = mAuth.getCurrentUser();
+        //if (currentUser != null) {
+        //    startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+        //    finish();
+        //}
 
         email = findViewById(R.id.txtEmail);
         password = findViewById(R.id.txtPassword);
