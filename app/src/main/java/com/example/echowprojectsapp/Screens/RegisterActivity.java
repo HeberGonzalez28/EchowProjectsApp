@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.echowprojectsapp.R;
@@ -21,6 +22,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     EditText email, password;
     Button register;
+    TextView sesion;
     FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +33,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         email = findViewById(R.id.txtEmail);
         password = findViewById(R.id.txtPassword);
+        sesion = findViewById(R.id.lblSesion);
         register = findViewById(R.id.btnRegister);
 
         register.setOnClickListener(new View.OnClickListener() {
@@ -46,6 +49,15 @@ public class RegisterActivity extends AppCompatActivity {
                 }
             }
         });
+
+        sesion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+            }
+        });
+
+
     }
 
     private void registerUser(String emailUser, String passUser) {

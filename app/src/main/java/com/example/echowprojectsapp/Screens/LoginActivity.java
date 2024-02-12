@@ -5,9 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.InputType;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.content.Intent;
 
@@ -23,6 +29,7 @@ public class LoginActivity extends AppCompatActivity {
 
     EditText email, password;
     Button login;
+    TextView lblLogin;
     FirebaseAuth mAuth;
 
     @Override
@@ -39,6 +46,7 @@ public class LoginActivity extends AppCompatActivity {
 
         email = findViewById(R.id.txtEmail);
         password = findViewById(R.id.txtPassword);
+        lblLogin = findViewById(R.id.lblLogin);
         login = findViewById(R.id.btnLogin);
 
         login.setOnClickListener(new View.OnClickListener() {
@@ -52,6 +60,13 @@ public class LoginActivity extends AppCompatActivity {
                 } else {
                     loginUser(emailUser, passUser);
                 }
+            }
+        });
+
+        lblLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
             }
         });
     }
@@ -72,4 +87,6 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
     }
+
+
 }
