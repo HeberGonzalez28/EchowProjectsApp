@@ -1,92 +1,81 @@
-package com.example.echowprojectsapp.Screens;
+package com.example.echowprojectsapp.Screens.Auth;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.InputType;
-import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.content.Intent;
 
 import com.example.echowprojectsapp.R;
+import com.example.echowprojectsapp.Screens.HomeActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 
-public class LoginActivity extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity {
 
     EditText email, password;
-    Button login;
-    TextView lblLogin;
+    Button register;
+    TextView sesion;
     FirebaseAuth mAuth;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_register);
 
         mAuth = FirebaseAuth.getInstance();
-        //FirebaseUser currentUser = mAuth.getCurrentUser();
-        //if (currentUser != null) {
-        //    startActivity(new Intent(LoginActivity.this, HomeActivity.class));
-        //    finish();
-        //}
 
         email = findViewById(R.id.txtEmail);
         password = findViewById(R.id.txtPassword);
-        lblLogin = findViewById(R.id.lblLogin);
-        login = findViewById(R.id.btnLogin);
+        sesion = findViewById(R.id.lblSesion);
+        register = findViewById(R.id.btnRegister);
 
-        login.setOnClickListener(new View.OnClickListener() {
+        register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String emailUser = email.getText().toString().trim();
                 String passUser = password.getText().toString().trim();
 
                 if (emailUser.isEmpty() && passUser.isEmpty()){
-                    Toast.makeText(LoginActivity.this, "Favor llenar los campos", Toast.LENGTH_LONG).show();
+                    Toast.makeText(RegisterActivity.this, "Favor llenar los campos", Toast.LENGTH_LONG).show();
                 } else {
-                    loginUser(emailUser, passUser);
+                    registerUser(emailUser, passUser);
                 }
             }
         });
 
-        lblLogin.setOnClickListener(new View.OnClickListener() {
+        sesion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(LoginActivity.this, RegisterActivity.class));
+                startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
             }
         });
+
+
     }
 
-    private void loginUser(String emailUser, String passUser) {
-        mAuth.signInWithEmailAndPassword(emailUser, passUser).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+    private void registerUser(String emailUser, String passUser) {
+        mAuth.createUserWithEmailAndPassword(emailUser, passUser).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()){
                     finish();
-                    startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+                    Toast.makeText(RegisterActivity.this, "Usuario registrado", Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(RegisterActivity.this, HomeActivity.class));
                 }
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Toast.makeText(LoginActivity.this, "Error al iniciar sesion", Toast.LENGTH_SHORT).show();
+                Toast.makeText(RegisterActivity.this, "Error al iniciar sesion", Toast.LENGTH_SHORT).show();
             }
         });
     }
-
-
 }
