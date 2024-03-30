@@ -8,18 +8,18 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.example.proyectogrupo1musicstore.Activities.AcercaDe.ActivityAcercaDe;
-import com.example.proyectogrupo1musicstore.Activities.Auth.activity_login;
-import com.example.proyectogrupo1musicstore.Activities.Auth.activity_principal_login;
-import com.example.proyectogrupo1musicstore.Activities.Buscar.ActivityBuscarPrincipal;
-import com.example.proyectogrupo1musicstore.Activities.Grupos.ActivityGrupoPrincipal;
-import com.example.proyectogrupo1musicstore.Activities.Multimedia.ActivityPlayList;
-import com.example.proyectogrupo1musicstore.Activities.PantallaPrincipal.ActivityPantallaPrincipal;
-import com.example.proyectogrupo1musicstore.Activities.Perfil.Activity_EditarPerfil;
-import com.example.proyectogrupo1musicstore.Activities.Perfil.Activity_PerfilPersonal;
-import com.example.proyectogrupo1musicstore.R;
-import com.example.proyectogrupo1musicstore.Utilidades.AppPreferences.AppPreferences;
-import com.example.proyectogrupo1musicstore.Utilidades.Token.token;
+import com.example.echowprojectsapp.Activities.AcercaDe.ActivityAcercaDe;
+import com.example.echowprojectsapp.Activities.Auth.activity_login;
+import com.example.echowprojectsapp.Activities.Auth.activity_principal_login;
+import com.example.echowprojectsapp.Activities.Buscar.ActivityBuscarPrincipal;
+import com.example.echowprojectsapp.Activities.Grupos.ActivityGrupoPrincipal;
+import com.example.echowprojectsapp.Activities.Multimedia.ActivityPlayList;
+import com.example.echowprojectsapp.Activities.PantallaPrincipal.ActivityPantallaPrincipal;
+import com.example.echowprojectsapp.Activities.Perfil.Activity_EditarPerfil;
+import com.example.echowprojectsapp.Activities.Perfil.Activity_PerfilPersonal;
+import com.example.echowprojectsapp.R;
+import com.example.echowprojectsapp.Utilidades.AppPreferences.AppPreferences;
+import com.example.echowprojectsapp.Utilidades.Token.token;
 
 public class NavigationClickListener implements View.OnClickListener {
 

@@ -1,8 +1,8 @@
 package com.example.echowprojectsapp.Activities.Auth;
 
-import static com.example.proyectogrupo1musicstore.Activities.Auth.Activity_CambiarContrasena.correo_usuario;
-import static com.example.proyectogrupo1musicstore.Activities.Auth.Activity_CambiarContrasena.nuevoPass_Encriptada;
-import static com.example.proyectogrupo1musicstore.Activities.Auth.Activity_CambiarContrasena.verificationCode_NuevaContra;
+import static com.example.echowprojectsapp.Activities.Auth.Activity_CambiarContrasena.correo_usuario;
+import static com.example.echowprojectsapp.Activities.Auth.Activity_CambiarContrasena.nuevoPass_Encriptada;
+import static com.example.echowprojectsapp.Activities.Auth.Activity_CambiarContrasena.verificationCode_NuevaContra;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -23,11 +23,11 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.proyectogrupo1musicstore.R;
-import com.example.proyectogrupo1musicstore.Utilidades.Token.JwtDecoder;
-import com.example.proyectogrupo1musicstore.Utilidades.Token.token;
-import com.example.proyectogrupo1musicstore.activity_personalizado_advertencia;
-import com.example.proyectogrupo1musicstore.activity_personalizado_confirmacion_correcta;
+import com.example.echowprojectsapp.R;
+import com.example.echowprojectsapp.Utilidades.Token.JwtDecoder;
+import com.example.echowprojectsapp.Utilidades.Token.token;
+import com.example.echowprojectsapp.activity_personalizado_advertencia;
+import com.example.echowprojectsapp.activity_personalizado_confirmacion_correcta;
 
 import org.json.JSONException;
 import org.json.JSONObject;

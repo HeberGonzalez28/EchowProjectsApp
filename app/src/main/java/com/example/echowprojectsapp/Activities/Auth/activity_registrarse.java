@@ -19,8 +19,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.proyectogrupo1musicstore.R;
-import com.example.proyectogrupo1musicstore.activity_personalizado_advertencia;
+import com.example.echowprojectsapp.R;
+import com.example.echowprojectsapp.activity_personalizado_advertencia;
 
 import org.json.JSONException;
 import org.json.JSONObject;

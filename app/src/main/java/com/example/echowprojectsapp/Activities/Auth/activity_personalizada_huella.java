@@ -10,7 +10,7 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.DialogFragment;
 
-import com.example.proyectogrupo1musicstore.R;
+import com.example.echowprojectsapp.R;
 
 public class activity_personalizada_huella extends DialogFragment {
 

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/md_theme_light_onPrimary"
+    android:background="@drawable/background"
     tools:context=".Screens.Auth.LoginActivity">
 
     <LinearLayout
@@ -49,11 +49,12 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
             android:layout_marginRight="10dp"
-            android:background="@color/md_theme_light_inverseOnSurface"
-            android:padding="8dp"
+            android:background="@color/white"
             android:ems="10"
             android:hint="Email"
-            android:inputType="textEmailAddress" />
+            android:inputType="textEmailAddress"
+            android:minHeight="48dp"
+            android:padding="8dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -71,11 +72,11 @@
                 android:text="Password" />
 
             <TextView
-                android:id="@+id/textView5"
+                android:id="@+id/txtOlvidopassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0"
-                android:textColor="@color/md_theme_light_primary"
+                android:textColor="@color/white"
                 android:textStyle="bold"
                 android:text="Olvido su contraseña?" />
         </LinearLayout>
@@ -87,21 +88,22 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="5dp"
             android:layout_marginRight="10dp"
-            android:background="@color/md_theme_light_inverseOnSurface"
-            android:padding="8dp"
+            android:background="@color/white"
             android:ems="10"
             android:hint="Contraseña"
-            android:inputType="textPassword" />
+            android:inputType="textPassword"
+            android:minHeight="48dp"
+            android:padding="8dp" />
 
         <CheckBox
-            android:id="@+id/checkBox"
+            android:id="@+id/cbrecordarLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="3dp"
-            android:text="Mostrar/ocultar contraseña" />
+            android:text="Recordar login" />
 
         <Button
-            android:id="@+id/btnLogin"
+            android:id="@+id/btnRegistrar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -110,7 +112,7 @@
             android:text="Log in" />
 
         <LinearLayout
-            android:layout_width="290dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="5dp"
@@ -118,21 +120,22 @@
 
             <TextView
                 android:id="@+id/textView8"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_margin="0dp"
                 android:layout_weight="9"
                 android:text="Aun no tienes una cuenta?"
-                android:textStyle="bold"
-                android:layout_width="0dp" />
+                android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/lblLogin"
+            <Button
+                android:id="@+id/btnRegistrar"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="6"
                 android:text="Registrate aqui"
-                android:textColor="@color/md_theme_light_primary"
-                android:textStyle="bold" />
+                android:textColor="@color/white2"
+                android:textStyle="bold"
+                tools:ignore="DuplicateIds" />
         </LinearLayout>
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

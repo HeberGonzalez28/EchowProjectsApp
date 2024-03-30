@@ -10,11 +10,11 @@ import androidx.annotation.NonNull;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
-import com.example.proyectogrupo1musicstore.MainActivity;
-import com.example.proyectogrupo1musicstore.MyApplication.MyApplication;
-import com.example.proyectogrupo1musicstore.R;
-import com.example.proyectogrupo1musicstore.Room.NotificationEntity;
-import com.example.proyectogrupo1musicstore.Utilidades.AppPreferences.AppPreferences;
+import com.example.echowprojectsapp.MainActivity;
+import com.example.echowprojectsapp.MyApplication;
+import com.example.echowprojectsapp.R;
+import com.example.echowprojectsapp.Room.NotificationEntity;
+import com.example.echowprojectsapp.Utilidades.AppPreferences.AppPreferences;
 import com.google.firebase.messaging.FirebaseMessagingService;
 import com.google.firebase.messaging.RemoteMessage;
 

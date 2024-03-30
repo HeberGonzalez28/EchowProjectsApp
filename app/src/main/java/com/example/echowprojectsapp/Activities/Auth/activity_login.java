@@ -3,8 +3,6 @@ package com.example.echowprojectsapp.Activities.Auth;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.hardware.fingerprint.FingerprintManager;
-import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.text.InputFilter;
@@ -15,15 +13,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.biometric.BiometricPrompt;
-import androidx.core.content.ContextCompat;
-import androidx.fragment.app.FragmentActivity;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -31,11 +24,11 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.proyectogrupo1musicstore.Activities.PantallaPrincipal.ActivityPantallaPrincipal;
-import com.example.proyectogrupo1musicstore.R;
-import com.example.proyectogrupo1musicstore.Utilidades.Token.token;
-import com.example.proyectogrupo1musicstore.activity_personalizado_advertencia;
-import com.example.proyectogrupo1musicstore.activity_personalizado_confirmacion_correcta;
+import com.example.echowprojectsapp.Activities.PantallaPrincipal.ActivityPantallaPrincipal;
+import com.example.echowprojectsapp.R;
+import com.example.echowprojectsapp.Utilidades.Token.token;
+import com.example.echowprojectsapp.activity_personalizado_advertencia;
+import com.example.echowprojectsapp.activity_personalizado_confirmacion_correcta;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -44,7 +37,6 @@ import org.mindrot.jbcrypt.BCrypt;
 import java.security.MessageDigest;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.concurrent.Executor;
 
 import javax.crypto.Cipher;
 import javax.crypto.spec.SecretKeySpec;
@@ -56,13 +48,14 @@ public class activity_login extends AppCompatActivity {
 
     TextView txtviewOlvidaPassword, txtviewLoginHuella;
     Button btnLoginEntrar, btnLoginRegistrarse;
-    ImageButton btnLoginHuella;
-    String contraseniaParaClave = "programacionMovil1";
-    Boolean estadoLogin, estadoHuella, accesoUsuarioHuella;
-    String estadoUsuarioHuella, verificarUsuario;
+
+    String contraseniaClave = "PrograMovil1";
+    Boolean estadoLogin;
+    String  verificarUsuario;
+
    // private token acceso = new token(this);
     //int idUsuario;
-    CheckBox recordarmeInicioSesion;
+   CheckBox recordarInicioSesion;
     public static boolean estadoSeleccionado;
 
 
@@ -72,15 +65,15 @@ public class activity_login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         /*Amarrando las variables con el elemento de la interfaz*/
-        btnLoginEntrar = (Button) findViewById(R.id.btnLoginEntrar);
-        btnLoginRegistrarse = (Button) findViewById(R.id.btnRegistrarCrear);
+        btnLoginEntrar = (Button) findViewById(R.id.btnRegistrar);
+        btnLoginRegistrarse = (Button) findViewById(R.id.btnRegistrar);
 
-        txtLoginUsuario = (EditText) findViewById(R.id.txtRegistrarUsuario);
-        txtLoginPassword = (EditText) findViewById(R.id.txtLoginPassword);
-        txtviewOlvidaPassword = (TextView) findViewById(R.id.txtviewOlvidaPassword);
-        txtviewLoginHuella = (TextView) findViewById(R.id.txtviewLoginHuella);
-        recordarmeInicioSesion = (CheckBox) findViewById(R.id.checkLoginRecordar);
-        btnLoginHuella = (ImageButton) findViewById(R.id.btnLoginHuella);
+        txtLoginUsuario = (EditText) findViewById(R.id.txtEmail);
+        txtLoginPassword = (EditText) findViewById(R.id.txtPassword);
+        txtviewOlvidaPassword = (TextView) findViewById(R.id.txtOlvidopassword);
+
+        recordarInicioSesion = (CheckBox) findViewById(R.id.cbrecordarLogin);
+
        // idUsuario = Integer.parseInt(JwtDecoder.decodeJwt(acceso.recuperarTokenFromKeystore()));
 
 
@@ -121,60 +114,12 @@ public class activity_login extends AppCompatActivity {
                 startActivity(recuperarContra);
             }
         });
-
-        /*Evento para iniciar sesión con la huella (Primero con la imageButton) luego con el textview*/
-        btnLoginHuella.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(txtLoginUsuario.getText().toString().equals("")){
-                    String textoLogin = "¡Para acceder con tu huella digital, por favor introduce primero tu nombre de usuario!";
-                    activity_personalizado_advertencia dialogFragment = activity_personalizado_advertencia.newInstance(textoLogin);
-                    dialogFragment.show(getSupportFragmentManager(), "advertencia");
-                }else{
-                    /*Validar que ese usuario exista en la BD*/
-                    //*Si el usuario existe permitir la autenticacion sino no permitir el ingreso*/
-                    verificarusuario();
-                    //Log.d("La variable",""+verificarUsuario);
-                }
-
-            }
-        });
-
-        txtviewLoginHuella.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(txtLoginUsuario.getText().toString().equals("")){
-                    String textoLogin = "¡Para acceder con tu huella digital, por favor introduce primero tu nombre de usuario!";
-                    activity_personalizado_advertencia dialogFragment = activity_personalizado_advertencia.newInstance(textoLogin);
-                    dialogFragment.show(getSupportFragmentManager(), "advertencia");
-                }else{
-                    /*Validar que ese usuario exista en la BD*/
-                    //*Si el usuario existe permitir la autenticacion sino no permitir el ingreso*/
-                    verificarusuario();
-                    if(verificarUsuario.equals("existe")){
-                        /*Verificar si ese usuario tiene habilitado el checkbox en el area de perfil*/
-                        verificarAccesoUsuario();
-                    }else{
-                        String textoLogin = "Lamentamos informarte que el usuario ingresado no se encuentra registrado en nuestro sistema.";
-                        activity_personalizado_advertencia dialogFragment = activity_personalizado_advertencia.newInstance(textoLogin);
-                        dialogFragment.show(getSupportFragmentManager(), "advertencia");
-                    }
-                }
-
-            }
-        });
-        expresiones_regulares();
-        /*Validar que el telefono tenga una huella*/
-        if (verificarExistenciaHuella() == false) {
-            txtviewLoginHuella.setVisibility(View.INVISIBLE);
-            btnLoginHuella.setVisibility(View.INVISIBLE);
-        }
     }
 
     /*Metódo para validar credenciales de autenticación*/
     private void validarUsuarioPassword() throws Exception {
         //Obtener el estado del checkbox de recordarme
-        final String encriptarUser = encriptarUsuario(txtLoginUsuario.getText().toString(), contraseniaParaClave);
+        final String encriptarUser = encriptarUsuario(txtLoginUsuario.getText().toString(), contraseniaClave);
 
         String url = "https://phpclusters-156700-0.cloudclusters.net/busquedaAutenticacion.php";
         RequestQueue queue = Volley.newRequestQueue(this);
@@ -210,7 +155,7 @@ public class activity_login extends AppCompatActivity {
                                     String token = jsonObject.getString("token");
                                     /*Metodo para guardar ese token en el keystore*/
                                     //guardarToken();
-                                    com.example.proyectogrupo1musicstore.Utilidades.Token.token acceso = new token(getApplicationContext());
+                                    com.example.echowprojectsapp.Utilidades.Token.token acceso = new token(getApplicationContext());
                                     acceso.guardarTokenToKeystore(token);
                                     //acceso.mostrarToken();
                                     //acceso.recuperarTokenFromKeystore();
@@ -220,7 +165,7 @@ public class activity_login extends AppCompatActivity {
                                         @Override
                                         public void run() {
                                             /*ESTO SOLO ES DE PRUEBA*/
-                                            if (recordarmeInicioSesion.isChecked() == true) {
+                                            if (recordarInicioSesion.isChecked() == true) {
                                                 estadoSeleccionado = true;
                                             } else {
                                                 estadoSeleccionado = false;
@@ -386,7 +331,7 @@ public class activity_login extends AppCompatActivity {
     }
 
     //Verificar si el dispositivo tiene una huella configurada
-    public boolean verificarExistenciaHuella() {
+   /*public boolean verificarExistenciaHuella() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             FingerprintManager fingerprintManager = (FingerprintManager) getApplicationContext().getSystemService(Context.FINGERPRINT_SERVICE);
             if (fingerprintManager != null && fingerprintManager.isHardwareDetected()) {
@@ -488,7 +433,7 @@ public class activity_login extends AppCompatActivity {
 
         biometricPrompt.authenticate(promptInfo);
 
-    }
+    }*/
 
 
     public void verificarusuario() {
@@ -537,7 +482,10 @@ public class activity_login extends AppCompatActivity {
         queue.add(verificacionRequest);
     }
 
-    public void restAPIHuella(){
+    private void verificarAccesoUsuario() {
+    }
+
+    /*public void restAPIHuella(){
 
         String url = "https://phpclusters-156700-0.cloudclusters.net/huella.php";
         RequestQueue queue = Volley.newRequestQueue(this);
@@ -556,11 +504,11 @@ public class activity_login extends AppCompatActivity {
                             activity_personalizado_confirmacion_correcta dialogFragment = activity_personalizado_confirmacion_correcta.newInstance(textoLogin);
                             dialogFragment.show(getSupportFragmentManager(), "acceso");
 
-                            /*Obteniendo el token que se genera cuando el usuario se loguea*/
+                            //Obteniendo el token que se genera cuando el usuario se loguea
                             String token = jsonObject.getString("token");
-                            /*Metodo para guardar ese token en el keystore*/
+                            //Metodo para guardar ese token en el keystore
                             //guardarToken();
-                            com.example.proyectogrupo1musicstore.Utilidades.Token.token acceso = new token(getApplicationContext());
+                            com.example.echowprojectsapp.Utilidades.Token.token acceso = new token(getApplicationContext());
                             acceso.guardarTokenToKeystore(token);
                             //acceso.mostrarToken();
                             //acceso.recuperarTokenFromKeystore();
@@ -568,15 +516,15 @@ public class activity_login extends AppCompatActivity {
                             new Handler().postDelayed(new Runnable() {
                             @Override
                             public void run() {
-                            /*ESTO SOLO ES DE PRUEBA*/
-                            if (recordarmeInicioSesion.isChecked() == true) {
+                            //ESTO SOLO ES DE PRUEBA
+                            if (recordarInicioSesion.isChecked() == true) {
                                 estadoSeleccionado = true;
                             } else {
                                 estadoSeleccionado = false;
                             }
-                                /*Guardar ese valor en el sharedPreference para poder recuperarlo en caso de que la aplicación se cierre*/
+                                //Guardar ese valor en el sharedPreference para poder recuperarlo en caso de que la aplicación se cierre
                                 // Para guardar un valor
-                                SharedPreferences sharedPref = getSharedPreferences("estadoCheck", Context.MODE_PRIVATE);
+                                /*SharedPreferences sharedPref = getSharedPreferences("estadoCheck", Context.MODE_PRIVATE);
                                 SharedPreferences.Editor editor = sharedPref.edit();
                                 editor.putBoolean("estadoCheck", estadoSeleccionado);
                                 editor.apply();
@@ -609,6 +557,6 @@ public class activity_login extends AppCompatActivity {
         };
         queue.add(stringRequest);
 
-    }
+    }*/
 }
 

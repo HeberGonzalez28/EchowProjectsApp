@@ -9,10 +9,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.proyectogrupo1musicstore.Adapters.AudioPersonalAdapter;
-import com.example.proyectogrupo1musicstore.Models.musicItem;
-import com.example.proyectogrupo1musicstore.NetworkTasks.GruposNetworkTasks.obtenerAudiosPersonalesAsyncTask;
-import com.example.proyectogrupo1musicstore.R;
+import com.example.echowprojectsapp.Adapters.AudioPersonalAdapter;
+import com.example.echowprojectsapp.Models.musicItem;
+import com.example.echowprojectsapp.NetworkTasks.GruposNetworkTasks.obtenerAudiosPersonalesAsyncTask;
+import com.example.echowprojectsapp.R;
 
 import java.util.ArrayList;
 import java.util.List;

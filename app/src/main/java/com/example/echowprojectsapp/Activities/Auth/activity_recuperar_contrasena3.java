@@ -1,6 +1,6 @@
 package com.example.echowprojectsapp.Activities.Auth;
 
-import static com.example.proyectogrupo1musicstore.Activities.Auth.activity_recuperar_contrasena1.email;
+import static com.example.echowprojectsapp.Activities.Auth.activity_recuperar_contrasena1.email;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -18,7 +18,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.proyectogrupo1musicstore.R;
+import com.example.echowprojectsapp.R;
 
 import org.mindrot.jbcrypt.BCrypt;
 
@@ -30,7 +30,7 @@ public class activity_recuperar_contrasena3 extends AppCompatActivity {
     Button btnRecuperarRestaurar;
     EditText txtRecuperarNuevoPass, txtRecuperarConfirmar;
 
-    String contraseniaParaClave = "programacionMovil1"; // Clave para encriptar el correo
+    String contraseniaParaClave = "PrograMovil"; // Clave para encriptar el correo
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

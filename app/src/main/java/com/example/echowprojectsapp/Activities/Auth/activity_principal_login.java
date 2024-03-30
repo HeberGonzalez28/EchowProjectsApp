@@ -7,7 +7,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.proyectogrupo1musicstore.R;
+import com.example.echowprojectsapp.R;
 
 public class activity_principal_login extends AppCompatActivity {
 

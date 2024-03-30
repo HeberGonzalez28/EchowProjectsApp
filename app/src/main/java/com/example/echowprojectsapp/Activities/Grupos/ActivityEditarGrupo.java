@@ -31,16 +31,16 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.proyectogrupo1musicstore.Adapters.CustomAdapterNuevoGrupoIntegrantes;
-import com.example.proyectogrupo1musicstore.Models.informacionGrupoEditar;
-import com.example.proyectogrupo1musicstore.Models.vistaDeNuevoGrupo;
-import com.example.proyectogrupo1musicstore.NetworkTasks.GruposNetworkTasks.FetchMemberDetailsEditarAsyncTask;
-import com.example.proyectogrupo1musicstore.NetworkTasks.GruposNetworkTasks.InformacionGrupoEditarAsyncTask;
-import com.example.proyectogrupo1musicstore.NetworkTasks.GruposNetworkTasks.UpdateGrupoAsyncTask;
-import com.example.proyectogrupo1musicstore.R;
-import com.example.proyectogrupo1musicstore.Utilidades.Token.JwtDecoder;
-import com.example.proyectogrupo1musicstore.Utilidades.Token.token;
-import com.example.proyectogrupo1musicstore.Utilidades.UI.ConfirmationDialog;
+import com.example.echowprojectsapp.Adapters.CustomAdapterNuevoGrupoIntegrantes;
+import com.example.echowprojectsapp.Models.informacionGrupoEditar;
+import com.example.echowprojectsapp.Models.vistaDeNuevoGrupo;
+import com.example.echowprojectsapp.NetworkTasks.GruposNetworkTasks.FetchMemberDetailsEditarAsyncTask;
+import com.example.echowprojectsapp.NetworkTasks.GruposNetworkTasks.InformacionGrupoEditarAsyncTask;
+import com.example.echowprojectsapp.NetworkTasks.GruposNetworkTasks.UpdateGrupoAsyncTask;
+import com.example.echowprojectsapp.R;
+import com.example.echowprojectsapp.Utilidades.Token.JwtDecoder;
+import com.example.echowprojectsapp.Utilidades.Token.token;
+import com.example.echowprojectsapp.Utilidades.UI.ConfirmationDialog;
 
 import org.json.JSONException;
 import org.json.JSONObject;

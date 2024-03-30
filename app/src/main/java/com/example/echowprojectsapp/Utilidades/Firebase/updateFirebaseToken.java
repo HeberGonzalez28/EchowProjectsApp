@@ -1,6 +1,6 @@
 package com.example.echowprojectsapp.Utilidades.Firebase;
 
-import com.example.proyectogrupo1musicstore.NetworkTasks.FirebaseAsyncTask.UpdateTokenAsyncTask;
+import com.example.echowprojectsapp.NetworkTasks.FirebaseAsyncTask.UpdateTokenAsyncTask;
 
 import org.json.JSONException;
 import org.json.JSONObject;

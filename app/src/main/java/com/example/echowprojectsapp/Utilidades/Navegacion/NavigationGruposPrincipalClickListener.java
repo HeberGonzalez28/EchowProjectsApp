@@ -10,11 +10,11 @@ import android.widget.TextView;
 
 import androidx.cardview.widget.CardView;
 
-import com.example.proyectogrupo1musicstore.Activities.Grupos.ActivityGrupoPrincipal;
-import com.example.proyectogrupo1musicstore.Activities.Grupos.ActivityGruposBuscar;
-import com.example.proyectogrupo1musicstore.Activities.Grupos.ActivityNuevoGrupoIntegrantes;
-import com.example.proyectogrupo1musicstore.Activities.PantallaPrincipal.ActivityPantallaPrincipal;
-import com.example.proyectogrupo1musicstore.R;
+import com.example.echowprojectsapp.Activities.Grupos.ActivityGrupoPrincipal;
+import com.example.echowprojectsapp.Activities.Grupos.ActivityGruposBuscar;
+import com.example.echowprojectsapp.Activities.Grupos.ActivityNuevoGrupoIntegrantes;
+import com.example.echowprojectsapp.Activities.PantallaPrincipal.ActivityPantallaPrincipal;
+import com.example.echowprojectsapp.R;
 
 public class NavigationGruposPrincipalClickListener implements View.OnClickListener {
 

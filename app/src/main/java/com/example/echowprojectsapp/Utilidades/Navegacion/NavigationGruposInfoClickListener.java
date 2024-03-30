@@ -7,10 +7,10 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-import com.example.proyectogrupo1musicstore.Activities.Grupos.ActivityVerTodosIntegrantes;
-import com.example.proyectogrupo1musicstore.Activities.Grupos.ActivityVerTodosMusica;
-import com.example.proyectogrupo1musicstore.Activities.Grupos.ActivityVerTodosVideo;
-import com.example.proyectogrupo1musicstore.R;
+import com.example.echowprojectsapp.Activities.Grupos.ActivityVerTodosIntegrantes;
+import com.example.echowprojectsapp.Activities.Grupos.ActivityVerTodosMusica;
+import com.example.echowprojectsapp.Activities.Grupos.ActivityVerTodosVideo;
+import com.example.echowprojectsapp.R;
 
 public class NavigationGruposInfoClickListener implements View.OnClickListener {
 

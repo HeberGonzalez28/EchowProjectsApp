@@ -9,7 +9,7 @@ import io.jsonwebtoken.security.Keys;
 
 public class JwtDecoder {
 
-    private static final byte[] KEY = "programacionmovil1programacionmovil1programacionmovil1".getBytes(StandardCharsets.UTF_8);
+    private static final byte[] KEY = "prograMovil".getBytes(StandardCharsets.UTF_8);
 
     public static String decodeJwt(String jwt) {
         try {

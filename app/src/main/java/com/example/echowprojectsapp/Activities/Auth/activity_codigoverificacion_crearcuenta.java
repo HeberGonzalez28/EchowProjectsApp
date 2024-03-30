@@ -1,12 +1,12 @@
 package com.example.echowprojectsapp.Activities.Auth;
 
 
-import static com.example.proyectogrupo1musicstore.Activities.Auth.activity_registrarse.form_apellidos;
-import static com.example.proyectogrupo1musicstore.Activities.Auth.activity_registrarse.form_correo;
-import static com.example.proyectogrupo1musicstore.Activities.Auth.activity_registrarse.form_nombres;
-import static com.example.proyectogrupo1musicstore.Activities.Auth.activity_registrarse.form_password;
-import static com.example.proyectogrupo1musicstore.Activities.Auth.activity_registrarse.form_usuario;
-import static com.example.proyectogrupo1musicstore.Activities.Auth.activity_registrarse.verificationCode;
+import static com.example.echowprojectsapp.Activities.Auth.activity_registrarse.form_apellidos;
+import static com.example.echowprojectsapp.Activities.Auth.activity_registrarse.form_correo;
+import static com.example.echowprojectsapp.Activities.Auth.activity_registrarse.form_nombres;
+import static com.example.echowprojectsapp.Activities.Auth.activity_registrarse.form_password;
+import static com.example.echowprojectsapp.Activities.Auth.activity_registrarse.form_usuario;
+import static com.example.echowprojectsapp.Activities.Auth.activity_registrarse.verificationCode;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -29,9 +29,9 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.example.proyectogrupo1musicstore.R;
-import com.example.proyectogrupo1musicstore.activity_personalizado_advertencia;
-import com.example.proyectogrupo1musicstore.activity_personalizado_confirmacion_correcta;
+import com.example.echowprojectsapp.R;
+import com.example.echowprojectsapp.activity_personalizado_advertencia;
+import com.example.echowprojectsapp.activity_personalizado_confirmacion_correcta;
 
 import org.json.JSONException;
 import org.json.JSONObject;
