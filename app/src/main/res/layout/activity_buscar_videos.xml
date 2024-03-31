@@ -5,7 +5,7 @@
     android:id="@+id/drawer_layoutsBuscarVideosBusquedasupe"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondodetodaslaspantallas"
+    android:background="@drawable/Echowfondo"
     tools:context=".Activities.Multimedia.Activity_BuscarVideos">
 
     <ScrollView
@@ -15,7 +15,7 @@
             android:id="@+id/layoutBuscarvideossegundo"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/fondodetodaslaspantallas"
+            android:background="@drawable/Echowfondo"
             tools:context=".Activities.Grupos.ActivityGrupoPrincipal">
 
             <RelativeLayout

@@ -5,7 +5,7 @@
     android:id="@+id/drawer_layoutBuscarPrincipal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondodetodaslaspantallas"
+    android:background="@drawable/Echowfondo"
     tools:context=".Activities.Buscar.ActivityBuscarPrincipal">
     <ScrollView
         android:layout_width="match_parent"
@@ -15,7 +15,7 @@
             android:id="@+id/layoutBuscarPrincipal"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/fondodetodaslaspantallas"
+            android:background="@drawable/Echowfondo"
             tools:context=".Activities.Buscar.ActivityBuscarPrincipal">
 
             <RelativeLayout

@@ -5,7 +5,7 @@
     android:id="@+id/drawer_layoutGrupoInfo"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondodetodaslaspantallas"
+    android:background="@drawable/background"
     tools:context=".Activities.Multimedia.ActivityAgregarPlayListMusica">
 
     <ScrollView
@@ -66,7 +66,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
-                android:background="@drawable/nuevogrupocuadro"
+                android:background="@drawable/Echowfondo"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -94,7 +94,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:scaleType="fitXY"
-                        app:srcCompat="@drawable/logopantallaprincipal" />
+                        app:srcCompat="@drawable/Echowlogo" />
 
                 </androidx.cardview.widget.CardView>
 

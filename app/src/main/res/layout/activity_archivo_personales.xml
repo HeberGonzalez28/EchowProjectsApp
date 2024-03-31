@@ -133,7 +133,7 @@
                                             android:layout_width="80dp"
                                             android:layout_height="80dp"
                                             android:importantForAccessibility="no"
-                                            android:src="@drawable/playlist"
+                                            android:src="@drawable/portada1"
                                             tools:ignore="ImageContrastCheck" />
 
                                         <TextView
@@ -162,7 +162,7 @@
                                             android:layout_width="80dp"
                                             android:layout_height="80dp"
                                             android:importantForAccessibility="no"
-                                            android:src="@drawable/playlist"
+                                            android:src="@drawable/portada1"
                                             tools:ignore="ImageContrastCheck" />
 
                                         <TextView
@@ -191,7 +191,7 @@
                                             android:layout_width="80dp"
                                             android:layout_height="80dp"
                                             android:importantForAccessibility="no"
-                                            android:src="@drawable/playlist"
+                                            android:src="@drawable/portada1"
                                             tools:ignore="ImageContrastCheck" />
 
                                         <TextView
@@ -234,7 +234,7 @@
                                             android:layout_width="80dp"
                                             android:layout_height="80dp"
                                             android:importantForAccessibility="no"
-                                            android:src="@drawable/playlist"
+                                            android:src="@drawable/portada1"
                                             tools:ignore="ImageContrastCheck" />
 
                                         <TextView
@@ -263,7 +263,7 @@
                                             android:layout_width="80dp"
                                             android:layout_height="80dp"
                                             android:importantForAccessibility="no"
-                                            android:src="@drawable/playlist"
+                                            android:src="@drawable/portada1"
                                             tools:ignore="ImageContrastCheck" />
 
                                         <TextView
@@ -292,7 +292,7 @@
                                             android:layout_width="80dp"
                                             android:layout_height="80dp"
                                             android:importantForAccessibility="no"
-                                            android:src="@drawable/playlist"
+                                            android:src="@drawable/portada1"
                                             tools:ignore="ImageContrastCheck" />
 
                                         <TextView
@@ -335,7 +335,7 @@
                                             android:layout_width="80dp"
                                             android:layout_height="80dp"
                                             android:importantForAccessibility="no"
-                                            android:src="@drawable/playlist"
+                                            android:src="@drawable/portada1"
                                             tools:ignore="ImageContrastCheck" />
 
                                         <TextView
@@ -364,7 +364,7 @@
                                             android:layout_width="80dp"
                                             android:layout_height="80dp"
                                             android:importantForAccessibility="no"
-                                            android:src="@drawable/playlist"
+                                            android:src="@drawable/portada1"
                                             tools:ignore="ImageContrastCheck" />
 
                                         <TextView
@@ -393,7 +393,7 @@
                                             android:layout_width="80dp"
                                             android:layout_height="80dp"
                                             android:importantForAccessibility="no"
-                                            android:src="@drawable/playlist"
+                                            android:src="@drawable/portada1"
                                             tools:ignore="ImageContrastCheck" />
 
                                         <TextView
