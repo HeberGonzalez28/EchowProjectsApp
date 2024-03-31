@@ -8,9 +8,9 @@ import android.util.Log;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.proyectogrupo1musicstore.Models.videoItem;
-import com.example.proyectogrupo1musicstore.Utilidades.Imagenes.ImageDownloader;
-import com.example.proyectogrupo1musicstore.VideoAdapter;
+import com.example.echowprojectsapp.Models.videoItem;
+import com.example.echowprojectsapp.Utilidades.Imagenes.ImageDownloader;
+import com.example.echowprojectsapp.VideoAdapter;
 
 import org.json.JSONArray;
 import org.json.JSONException;

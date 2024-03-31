@@ -11,9 +11,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.proyectogrupo1musicstore.Activities.Perfil.Activity_PerfilPersonal;
-import com.example.proyectogrupo1musicstore.Models.integrantesItem;
-import com.example.proyectogrupo1musicstore.R;
+import com.example.echowprojectsapp.Activities.Perfil.Activity_PerfilPersonal;
+import com.example.echowprojectsapp.Models.integrantesItem;
+import com.example.echowprojectsapp.R;
 
 import java.util.List;
 

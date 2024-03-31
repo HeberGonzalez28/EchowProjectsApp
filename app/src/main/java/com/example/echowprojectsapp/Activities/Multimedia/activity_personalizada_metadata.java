@@ -1,14 +1,14 @@
 package com.example.echowprojectsapp.Activities.Multimedia;
 
-import static com.example.proyectogrupo1musicstore.Activities.Multimedia.Activity_SubirMusica.album;
-import static com.example.proyectogrupo1musicstore.Activities.Multimedia.Activity_SubirMusica.artista;
-import static com.example.proyectogrupo1musicstore.Activities.Multimedia.Activity_SubirMusica.audioBase64;
-import static com.example.proyectogrupo1musicstore.Activities.Multimedia.Activity_SubirMusica.genero;
-import static com.example.proyectogrupo1musicstore.Activities.Multimedia.Activity_SubirMusica.idFavorito;
-import static com.example.proyectogrupo1musicstore.Activities.Multimedia.Activity_SubirMusica.idPlayList;
-import static com.example.proyectogrupo1musicstore.Activities.Multimedia.Activity_SubirMusica.idUsuario;
-import static com.example.proyectogrupo1musicstore.Activities.Multimedia.Activity_SubirMusica.imagenPortadaBase64;
-import static com.example.proyectogrupo1musicstore.Activities.Multimedia.Activity_SubirMusica.nombreCancion;
+import static com.example.echowprojectsapp.Activities.Multimedia.Activity_SubirMusica.album;
+import static com.example.echowprojectsapp.Activities.Multimedia.Activity_SubirMusica.artista;
+import static com.example.echowprojectsapp.Activities.Multimedia.Activity_SubirMusica.audioBase64;
+import static com.example.echowprojectsapp.Activities.Multimedia.Activity_SubirMusica.genero;
+import static com.example.echowprojectsapp.Activities.Multimedia.Activity_SubirMusica.idFavorito;
+import static com.example.echowprojectsapp.Activities.Multimedia.Activity_SubirMusica.idPlayList;
+import static com.example.echowprojectsapp.Activities.Multimedia.Activity_SubirMusica.idUsuario;
+import static com.example.echowprojectsapp.Activities.Multimedia.Activity_SubirMusica.imagenPortadaBase64;
+import static com.example.echowprojectsapp.Activities.Multimedia.Activity_SubirMusica.nombreCancion;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
@@ -34,9 +34,9 @@ import androidx.annotation.NonNull;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.DialogFragment;
 
-import com.example.proyectogrupo1musicstore.NetworkTasks.Multimedia.Activity_SubirMusicaAsyncTask;
-import com.example.proyectogrupo1musicstore.R;
-import com.example.proyectogrupo1musicstore.Utilidades.Imagenes.FileUtils;
+import com.example.echowprojectsapp.NetworkTasks.Multimedia.Activity_SubirMusicaAsyncTask;
+import com.example.echowprojectsapp.R;
+import com.example.echowprojectsapp.Utilidades.Imagenes.FileUtils;
 
 import java.util.ArrayList;
 import java.util.Arrays;

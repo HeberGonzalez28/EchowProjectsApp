@@ -11,15 +11,15 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.proyectogrupo1musicstore.Activities.Grupos.ActivityChat;
-import com.example.proyectogrupo1musicstore.Activities.Grupos.ActivityEditarGrupo;
-import com.example.proyectogrupo1musicstore.Activities.Grupos.ActivityGrupoInfo;
-import com.example.proyectogrupo1musicstore.Models.vistaDeGrupo;
-import com.example.proyectogrupo1musicstore.NetworkTasks.GruposNetworkTasks.DeleteGrupoAsyncTask;
-import com.example.proyectogrupo1musicstore.NetworkTasks.GruposNetworkTasks.UpdateFavoritoAsyncTask;
-import com.example.proyectogrupo1musicstore.NetworkTasks.GruposNetworkTasks.salirGrupoAsyncTask;
-import com.example.proyectogrupo1musicstore.R;
-import com.example.proyectogrupo1musicstore.Utilidades.UI.ConfirmationDialog;
+import com.example.echowprojectsapp.Activities.Grupos.ActivityChat;
+import com.example.echowprojectsapp.Activities.Grupos.ActivityEditarGrupo;
+import com.example.echowprojectsapp.Activities.Grupos.ActivityGrupoInfo;
+import com.example.echowprojectsapp.Models.vistaDeGrupo;
+import com.example.echowprojectsapp.NetworkTasks.GruposNetworkTasks.DeleteGrupoAsyncTask;
+import com.example.echowprojectsapp.NetworkTasks.GruposNetworkTasks.UpdateFavoritoAsyncTask;
+import com.example.echowprojectsapp.NetworkTasks.GruposNetworkTasks.salirGrupoAsyncTask;
+import com.example.echowprojectsapp.R;
+import com.example.echowprojectsapp.Utilidades.UI.ConfirmationDialog;
 
 import org.json.JSONException;
 import org.json.JSONObject;

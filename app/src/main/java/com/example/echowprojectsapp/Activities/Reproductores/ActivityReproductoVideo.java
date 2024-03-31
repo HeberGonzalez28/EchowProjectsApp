@@ -14,7 +14,7 @@ import android.widget.VideoView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.proyectogrupo1musicstore.R;
+import com.example.echowprojectsapp.R;
 
 public class ActivityReproductoVideo extends AppCompatActivity {
 

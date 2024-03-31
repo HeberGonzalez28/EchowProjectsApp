@@ -10,12 +10,12 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.proyectogrupo1musicstore.Adapters.CustomAdapterReproductorPlaylist;
-import com.example.proyectogrupo1musicstore.Models.vistadeplaylist;
-import com.example.proyectogrupo1musicstore.NetworkTaksMulti.FetchDataAsyncModiPlayList;
-import com.example.proyectogrupo1musicstore.R;
-import com.example.proyectogrupo1musicstore.Utilidades.Token.JwtDecoder;
-import com.example.proyectogrupo1musicstore.Utilidades.Token.token;
+import com.example.echowprojectsapp.Adapters.CustomAdapterReproductorPlaylist;
+import com.example.echowprojectsapp.Models.vistadeplaylist;
+import com.example.echowprojectsapp.NetworkTaksMulti.FetchDataAsyncModiPlayList;
+import com.example.echowprojectsapp.R;
+import com.example.echowprojectsapp.Utilidades.Token.JwtDecoder;
+import com.example.echowprojectsapp.Utilidades.Token.token;
 
 import java.util.List;
 
@@ -26,7 +26,7 @@ public class ActivityVerPlayList extends AppCompatActivity implements FetchDataA
     ProgressDialog progressDialog;
     private int idplaylist;
 
-    private com.example.proyectogrupo1musicstore.Utilidades.Token.token token = new token(this);
+    private com.example.echowprojectsapp.Utilidades.Token.token token = new token(this);
 
     private int idUsuario;
 

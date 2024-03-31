@@ -7,9 +7,9 @@ import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import com.example.proyectogrupo1musicstore.Adapters.MusicaAdapter;
-import com.example.proyectogrupo1musicstore.Models.musicItem;
-import com.example.proyectogrupo1musicstore.R;
+import com.example.echowprojectsapp.Adapters.MusicaAdapter;
+import com.example.echowprojectsapp.Models.musicItem;
+import com.example.echowprojectsapp.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;

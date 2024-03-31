@@ -21,16 +21,16 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import com.example.proyectogrupo1musicstore.NetworkTasks.GruposNetworkTasks.aceptarSolicitudAsyncTask;
-import com.example.proyectogrupo1musicstore.NetworkTasks.GruposNetworkTasks.denegarSolicitudAsyncTask;
-import com.example.proyectogrupo1musicstore.R;
-import com.example.proyectogrupo1musicstore.Room.AppDatabase;
-import com.example.proyectogrupo1musicstore.Room.NotificationEntity;
-import com.example.proyectogrupo1musicstore.Utilidades.AppPreferences.AppPreferences;
-import com.example.proyectogrupo1musicstore.Utilidades.Firebase.updateFirebaseToken;
-import com.example.proyectogrupo1musicstore.Utilidades.Navegacion.NavigationClickListener;
-import com.example.proyectogrupo1musicstore.Utilidades.Token.JwtDecoder;
-import com.example.proyectogrupo1musicstore.Utilidades.Token.token;
+import com.example.echowprojectsapp.NetworkTasks.GruposNetworkTasks.aceptarSolicitudAsyncTask;
+import com.example.echowprojectsapp.NetworkTasks.GruposNetworkTasks.denegarSolicitudAsyncTask;
+import com.example.echowprojectsapp.R;
+import com.example.echowprojectsapp.Room.AppDatabase;
+import com.example.echowprojectsapp.Room.NotificationEntity;
+import com.example.echowprojectsapp.Utilidades.AppPreferences.AppPreferences;
+import com.example.echowprojectsapp.Utilidades.Firebase.updateFirebaseToken;
+import com.example.echowprojectsapp.Utilidades.Navegacion.NavigationClickListener;
+import com.example.echowprojectsapp.Utilidades.Token.JwtDecoder;
+import com.example.echowprojectsapp.Utilidades.Token.token;
 import com.google.firebase.messaging.FirebaseMessaging;
 
 import org.json.JSONException;

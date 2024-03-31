@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.proyectogrupo1musicstore.Models.vistaDeGrupo;
+import com.example.echowprojectsapp.Models.vistaDeGrupo;
 
 import java.io.BufferedOutputStream;
 import java.io.OutputStream;

@@ -18,9 +18,9 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.proyectogrupo1musicstore.Adapters.CustomAdapterMusicaVideos;
-import com.example.proyectogrupo1musicstore.Models.buscarAudioMusica;
-import com.example.proyectogrupo1musicstore.R;
+import com.example.echowprojectsapp.Adapters.CustomAdapterMusicaVideos;
+import com.example.echowprojectsapp.Models.buscarAudioMusica;
+import com.example.echowprojectsapp.R;
 
 import java.util.ArrayList;
 import java.util.List;

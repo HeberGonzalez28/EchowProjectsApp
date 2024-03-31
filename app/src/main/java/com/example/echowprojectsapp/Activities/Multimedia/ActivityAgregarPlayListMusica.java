@@ -10,15 +10,15 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.proyectogrupo1musicstore.Activities.Grupos.ActivityGrupoPrincipal;
-import com.example.proyectogrupo1musicstore.Adapters.PlayListAdapter;
-import com.example.proyectogrupo1musicstore.Models.PlayListItem;
-import com.example.proyectogrupo1musicstore.NetworkTaksMulti.ObtenerPlayListAsyncTask;
-import com.example.proyectogrupo1musicstore.NetworkTaksMulti.informacionGeneralPlayListAstAsyncTask;
-import com.example.proyectogrupo1musicstore.R;
-import com.example.proyectogrupo1musicstore.Utilidades.Navegacion.NavigationGruposInfoClickListener;
-import com.example.proyectogrupo1musicstore.Utilidades.Token.JwtDecoder;
-import com.example.proyectogrupo1musicstore.Utilidades.Token.token;
+import com.example.echowprojectsapp.Activities.Grupos.ActivityGrupoPrincipal;
+import com.example.echowprojectsapp.Adapters.PlayListAdapter;
+import com.example.echowprojectsapp.Models.PlayListItem;
+import com.example.echowprojectsapp.NetworkTaksMulti.ObtenerPlayListAsyncTask;
+import com.example.echowprojectsapp.NetworkTaksMulti.informacionGeneralPlayListAstAsyncTask;
+import com.example.echowprojectsapp.R;
+import com.example.echowprojectsapp.Utilidades.Navegacion.NavigationGruposInfoClickListener;
+import com.example.echowprojectsapp.Utilidades.Token.JwtDecoder;
+import com.example.echowprojectsapp.Utilidades.Token.token;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,7 +31,7 @@ public class ActivityAgregarPlayListMusica extends AppCompatActivity implements 
 
     private int idplaylist;
     ProgressDialog progressDialog;
-    private com.example.proyectogrupo1musicstore.Utilidades.Token.token token = new token(this);
+    private com.example.echowprojectsapp.Utilidades.Token.token token = new token(this);
     private NavigationGruposInfoClickListener navigationClickListener;
     private int idUsuario;
 

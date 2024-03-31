@@ -9,8 +9,8 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.proyectogrupo1musicstore.Models.vistaMusicaVideo;
-import com.example.proyectogrupo1musicstore.R;
+import com.example.echowprojectsapp.Models.vistaMusicaVideo;
+import com.example.echowprojectsapp.R;
 
 import java.util.List;
 

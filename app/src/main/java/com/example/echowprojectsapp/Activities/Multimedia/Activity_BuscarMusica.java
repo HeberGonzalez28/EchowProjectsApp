@@ -19,13 +19,13 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.proyectogrupo1musicstore.Adapters.CustomAdapterMusicaVideos;
-import com.example.proyectogrupo1musicstore.Models.buscarAudioMusica;
-import com.example.proyectogrupo1musicstore.NetworkTaksMulti.BuscarAudiosAsyncTask;
-import com.example.proyectogrupo1musicstore.R;
-import com.example.proyectogrupo1musicstore.Utilidades.Navegacion.NavigationClickListener;
-import com.example.proyectogrupo1musicstore.Utilidades.Token.JwtDecoder;
-import com.example.proyectogrupo1musicstore.Utilidades.Token.token;
+import com.example.echowprojectsapp.Adapters.CustomAdapterMusicaVideos;
+import com.example.echowprojectsapp.Models.buscarAudioMusica;
+import com.example.echowprojectsapp.NetworkTaksMulti.BuscarAudiosAsyncTask;
+import com.example.echowprojectsapp.R;
+import com.example.echowprojectsapp.Utilidades.Navegacion.NavigationClickListener;
+import com.example.echowprojectsapp.Utilidades.Token.JwtDecoder;
+import com.example.echowprojectsapp.Utilidades.Token.token;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -43,7 +43,7 @@ public class Activity_BuscarMusica extends AppCompatActivity {
 
     private NavigationClickListener navigationClickListener;
 
-    private com.example.proyectogrupo1musicstore.Utilidades.Token.token token = new token(this);
+    private com.example.echowprojectsapp.Utilidades.Token.token token = new token(this);
     private int idUsuario;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -13,13 +13,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.proyectogrupo1musicstore.Adapters.CustomAdapterNuevoGrupoIntegrantes;
-import com.example.proyectogrupo1musicstore.Models.vistaDeNuevoGrupo;
-import com.example.proyectogrupo1musicstore.NetworkTasks.GruposNetworkTasks.BuscarIntegranteAsyncTask;
-import com.example.proyectogrupo1musicstore.NetworkTasks.GruposNetworkTasks.NuevoGrupoIntegrantesAsyncTask;
-import com.example.proyectogrupo1musicstore.R;
-import com.example.proyectogrupo1musicstore.Utilidades.Token.JwtDecoder;
-import com.example.proyectogrupo1musicstore.Utilidades.Token.token;
+import com.example.echowprojectsapp.Adapters.CustomAdapterNuevoGrupoIntegrantes;
+import com.example.echowprojectsapp.Models.vistaDeNuevoGrupo;
+import com.example.echowprojectsapp.NetworkTasks.GruposNetworkTasks.BuscarIntegranteAsyncTask;
+import com.example.echowprojectsapp.NetworkTasks.GruposNetworkTasks.NuevoGrupoIntegrantesAsyncTask;
+import com.example.echowprojectsapp.R;
+import com.example.echowprojectsapp.Utilidades.Token.JwtDecoder;
+import com.example.echowprojectsapp.Utilidades.Token.token;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,7 +32,7 @@ public class ActivityNuevoGrupoIntegrantes extends AppCompatActivity implements 
     ProgressDialog progressDialog;
     List<Integer> selectedUserIds;
     CustomAdapterNuevoGrupoIntegrantes adapter;
-    private com.example.proyectogrupo1musicstore.Utilidades.Token.token token = new token(this);
+    private com.example.echowprojectsapp.Utilidades.Token.token token = new token(this);
     private int idUsuario;
 
     @Override

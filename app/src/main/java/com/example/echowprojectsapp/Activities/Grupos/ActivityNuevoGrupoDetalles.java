@@ -31,14 +31,14 @@ import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.proyectogrupo1musicstore.Adapters.CustomAdapterNuevoGrupoDetalles;
-import com.example.proyectogrupo1musicstore.Models.vistaDeNuevoGrupo;
-import com.example.proyectogrupo1musicstore.NetworkTasks.GruposNetworkTasks.CreateGroupAsyncTask;
-import com.example.proyectogrupo1musicstore.NetworkTasks.GruposNetworkTasks.FetchMemberDetailsAsyncTask;
-import com.example.proyectogrupo1musicstore.R;
-import com.example.proyectogrupo1musicstore.Utilidades.Token.JwtDecoder;
-import com.example.proyectogrupo1musicstore.Utilidades.Token.token;
-import com.example.proyectogrupo1musicstore.Utilidades.UI.ConfirmationDialog;
+import com.example.echowprojectsapp.Adapters.CustomAdapterNuevoGrupoDetalles;
+import com.example.echowprojectsapp.Models.vistaDeNuevoGrupo;
+import com.example.echowprojectsapp.NetworkTasks.GruposNetworkTasks.CreateGroupAsyncTask;
+import com.example.echowprojectsapp.NetworkTasks.GruposNetworkTasks.FetchMemberDetailsAsyncTask;
+import com.example.echowprojectsapp.R;
+import com.example.echowprojectsapp.Utilidades.Token.JwtDecoder;
+import com.example.echowprojectsapp.Utilidades.Token.token;
+import com.example.echowprojectsapp.Utilidades.UI.ConfirmationDialog;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -59,7 +59,7 @@ public class ActivityNuevoGrupoDetalles extends AppCompatActivity implements Fet
     byte[] imgPerfilByteArray;
     private int estadoPrivado;
     ProgressDialog progressDialog;
-    private com.example.proyectogrupo1musicstore.Utilidades.Token.token token = new token(this);
+    private com.example.echowprojectsapp.Utilidades.Token.token token = new token(this);
     private int idUsuario;
     private static final int PICK_IMAGE_REQUEST = 1;
     private static final int REQUEST_CODE = 123;

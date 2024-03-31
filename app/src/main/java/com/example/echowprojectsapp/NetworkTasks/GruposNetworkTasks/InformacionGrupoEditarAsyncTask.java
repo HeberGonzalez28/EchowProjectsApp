@@ -4,8 +4,8 @@ import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import com.example.proyectogrupo1musicstore.Models.informacionGrupoEditar;
-import com.example.proyectogrupo1musicstore.Utilidades.Imagenes.ImageDownloader;
+import com.example.echowprojectsapp.Models.informacionGrupoEditar;
+import com.example.echowprojectsapp.Utilidades.Imagenes.ImageDownloader;
 
 import org.json.JSONArray;
 import org.json.JSONException;

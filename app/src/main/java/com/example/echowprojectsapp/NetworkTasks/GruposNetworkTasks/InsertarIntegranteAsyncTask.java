@@ -6,8 +6,8 @@ import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.example.proyectogrupo1musicstore.Activities.Grupos.ActivityGrupoPrincipal;
-import com.example.proyectogrupo1musicstore.Utilidades.UI.DelayedActivityStarter;
+import com.example.echowprojectsapp.Activities.Grupos.ActivityGrupoPrincipal;
+import com.example.echowprojectsapp.Utilidades.UI.DelayedActivityStarter;
 
 import org.json.JSONObject;
 

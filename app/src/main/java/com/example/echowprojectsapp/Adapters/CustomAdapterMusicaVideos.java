@@ -9,8 +9,8 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.proyectogrupo1musicstore.Models.buscarAudioMusica;
-import com.example.proyectogrupo1musicstore.R;
+import com.example.echowprojectsapp.Models.buscarAudioMusica;
+import com.example.echowprojectsapp.R;
 
 import java.util.List;
 

@@ -14,10 +14,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.proyectogrupo1musicstore.Activities.Reproductores.ActivityReproductor;
-import com.example.proyectogrupo1musicstore.Models.audioItem;
-import com.example.proyectogrupo1musicstore.NetworkTasks.Multimedia.UpdateCancionFavoritaAsyncTask;
-import com.example.proyectogrupo1musicstore.R;
+import com.example.echowprojectsapp.Activities.Reproductores.ActivityReproductor;
+import com.example.echowprojectsapp.Models.audioItem;
+import com.example.echowprojectsapp.NetworkTasks.Multimedia.UpdateCancionFavoritaAsyncTask;
+import com.example.echowprojectsapp.R;
 
 import org.json.JSONException;
 import org.json.JSONObject;

@@ -1,39 +1,31 @@
-package com.example.echowprojectsapp.NetworkTasks.GruposNetworkTasks;
+package com.example.echowprojectsapp.NetworkTaksMulti;
 
-import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.Toast;
 
-import androidx.recyclerview.widget.RecyclerView;
-
-import com.example.echowprojectsapp.Models.vistaDeGrupo;
+import com.example.echowprojectsapp.Activities.Multimedia.ActivityModificarPlayList;
+import com.example.echowprojectsapp.Utilidades.UI.DelayedActivityStarter;
 
 import java.io.BufferedOutputStream;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.util.List;
 
-public class DeleteGrupoAsyncTask extends AsyncTask<String, Void, Void> {
+public class EditarPlayListAsyncTask  extends AsyncTask<String, Void, Void> {
 
     private final Context context;
     private final ProgressDialog progressDialog;
-    private final RecyclerView recyclerView;
-    private final int index;
-    private final List<vistaDeGrupo> dataList;
 
-    public DeleteGrupoAsyncTask(Context context, RecyclerView recyclerView, int index, List<vistaDeGrupo> list) {
+    public EditarPlayListAsyncTask(Context context) {
         this.context = context;
-        this.recyclerView = recyclerView;
-        this.index = index;
-        this.dataList = list;
         progressDialog = new ProgressDialog(context);
-        progressDialog.setMessage("Eliminando...");
+        progressDialog.setMessage("Actualizando...");
         progressDialog.setCancelable(false);
         progressDialog.show();
+
     }
 
     @Override
@@ -41,7 +33,7 @@ public class DeleteGrupoAsyncTask extends AsyncTask<String, Void, Void> {
         String jsonData = params[0];
 
         try {
-            URL url = new URL("https://phpclusters-156700-0.cloudclusters.net/deleteGroup.php");
+            URL url = new URL("https://phpclusters-156700-0.cloudclusters.net/modificacionPlayList.php");
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
             urlConnection.setRequestMethod("POST");
             urlConnection.setRequestProperty("Content-Type", "application/json");
@@ -53,27 +45,23 @@ public class DeleteGrupoAsyncTask extends AsyncTask<String, Void, Void> {
             out.close();
 
             int responseCode = urlConnection.getResponseCode();
-            Log.d("DeleteGrupoAsyncTask", "Response Code: " + responseCode);
+            Log.d("EditarPlayListAsyncTask", "Response Code: " + responseCode);
 
             urlConnection.disconnect();
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         return null;
     }
 
     @Override
     protected void onPostExecute(Void aVoid) {
         super.onPostExecute(aVoid);
+        Toast.makeText(context, "¡Cambios Guardados!", Toast.LENGTH_SHORT).show();
+        DelayedActivityStarter.startDelayedActivity(context, ActivityModificarPlayList.class, 1500);
         progressDialog.dismiss();
-        Toast.makeText(context, "¡Grupo Eliminado!", Toast.LENGTH_SHORT).show();
-        dataList.remove(index);
-        ((Activity) context).runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                recyclerView.getAdapter().notifyDataSetChanged();
-            }
-        });
     }
+
+
+
 }

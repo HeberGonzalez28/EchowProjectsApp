@@ -26,13 +26,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-import com.example.proyectogrupo1musicstore.Models.infoEditarPlayList;
-import com.example.proyectogrupo1musicstore.NetworkTaksMulti.EditarPlayListAsyncTask;
-import com.example.proyectogrupo1musicstore.NetworkTaksMulti.infoPlayListEditarAsyncTask;
-import com.example.proyectogrupo1musicstore.R;
-import com.example.proyectogrupo1musicstore.Utilidades.Token.JwtDecoder;
-import com.example.proyectogrupo1musicstore.Utilidades.Token.token;
-import com.example.proyectogrupo1musicstore.Utilidades.UI.ConfirmationDialog;
+import com.example.echowprojectsapp.Models.infoEditarPlayList;
+import com.example.echowprojectsapp.NetworkTaksMulti.EditarPlayListAsyncTask;
+import com.example.echowprojectsapp.NetworkTaksMulti.infoPlayListEditarAsyncTask;
+import com.example.echowprojectsapp.R;
+import com.example.echowprojectsapp.Utilidades.Token.JwtDecoder;
+import com.example.echowprojectsapp.Utilidades.Token.token;
+import com.example.echowprojectsapp.Utilidades.UI.ConfirmationDialog;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -51,7 +51,7 @@ public class ActivityEditarPlayList extends AppCompatActivity implements infoPla
 
     Button btnActualizar;
     private int idplaylist;
-    private com.example.proyectogrupo1musicstore.Utilidades.Token.token token = new token(this);
+    private com.example.echowprojectsapp.Utilidades.Token.token token = new token(this);
     private int idUsuario;
     private String urlAnterior;
     byte[] imgPerfilByteArrays;

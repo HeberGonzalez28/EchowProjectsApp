@@ -9,12 +9,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.proyectogrupo1musicstore.Adapters.AudioAdapter;
-import com.example.proyectogrupo1musicstore.Models.audioItem;
-import com.example.proyectogrupo1musicstore.NetworkTasks.Multimedia.obtenerAudiosMultimediaAsyncTask;
-import com.example.proyectogrupo1musicstore.R;
-import com.example.proyectogrupo1musicstore.Utilidades.Token.JwtDecoder;
-import com.example.proyectogrupo1musicstore.Utilidades.Token.token;
+import com.example.echowprojectsapp.Adapters.AudioAdapter;
+import com.example.echowprojectsapp.Models.audioItem;
+import com.example.echowprojectsapp.NetworkTasks.Multimedia.obtenerAudiosMultimediaAsyncTask;
+import com.example.echowprojectsapp.R;
+import com.example.echowprojectsapp.Utilidades.Token.JwtDecoder;
+import com.example.echowprojectsapp.Utilidades.Token.token;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +24,7 @@ public class ActivityVerCancionesFavoritas extends AppCompatActivity{
     RecyclerView recyclerviewvertodoCancionesFavoritas;
     ProgressDialog progressDialog;
 
-    private com.example.proyectogrupo1musicstore.Utilidades.Token.token token = new token(this);
+    private com.example.echowprojectsapp.Utilidades.Token.token token = new token(this);
     private int idUsuario;
 
     @Override

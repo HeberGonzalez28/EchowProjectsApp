@@ -1,11 +1,11 @@
-package com.example.echowprojectsapp.NetworkTasks.GruposNetworkTasks;
+package com.example.echowprojectsapp.NetworkTaksMulti;
 
 import android.app.ProgressDialog;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import com.example.echowprojectsapp.Models.vistaDeGrupo;
+import com.example.echowprojectsapp.Models.vistadeplaylist;
 import com.example.echowprojectsapp.Utilidades.Imagenes.ImageDownloader;
 
 import org.json.JSONArray;
@@ -22,19 +22,21 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FetchDataAsyncGruposPrincipal extends AsyncTask<String, Void, List<vistaDeGrupo>> {
+public class FetchDataAsyncModiPlayList extends AsyncTask<String, Void, List<vistadeplaylist>> {
 
-    private static final String TAG = "FetchDataAsyncGruposPrincipal";
+    private static final String TAG = "FetchDataAsyncModiPlayList";
     private DataFetchListener dataFetchListener;
+
     ProgressDialog progressDialog;
 
-    public FetchDataAsyncGruposPrincipal(DataFetchListener listener, ProgressDialog progressDialog) {
+
+    public FetchDataAsyncModiPlayList(DataFetchListener listener, ProgressDialog progressDialog) {
         this.dataFetchListener = listener;
         this.progressDialog = progressDialog;
     }
 
     @Override
-    protected List<vistaDeGrupo> doInBackground(String... params) {
+    protected List<vistadeplaylist> doInBackground(String... params) {
         String urlString = params[0]; // URL para el microservicio
         String idUsuario = params[1]; // idusuario parametro
 
@@ -78,16 +80,15 @@ public class FetchDataAsyncGruposPrincipal extends AsyncTask<String, Void, List<
 
         return null;
     }
-
     @Override
-    protected void onPostExecute(List<vistaDeGrupo> dataList) {
+    protected void onPostExecute(List<vistadeplaylist> dataList) {
         if (dataList != null) {
             dataFetchListener.onDataFetched(dataList);
         }
     }
 
-    private List<vistaDeGrupo> parseJsonResponse(String json) {
-        List<vistaDeGrupo> dataList = new ArrayList<>();
+    private List<vistadeplaylist> parseJsonResponse(String json) {
+        List<vistadeplaylist> dataList = new ArrayList<>();
 
         try {
             JSONArray jsonArray = new JSONArray(json);
@@ -96,16 +97,15 @@ public class FetchDataAsyncGruposPrincipal extends AsyncTask<String, Void, List<
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
 
                 // Extrae la informacion y crea objetos
-                Integer idgrupo = jsonObject.getInt("idgrupo");
-                String nombreGrupo = jsonObject.getString("nombre");
+                Integer idplaylist = jsonObject.getInt("idplaylist");
+                String nombre = jsonObject.getString("nombre");
+                String biografia = jsonObject.getString("biografia");
                 String creador = jsonObject.getString("usuario");
                 Integer idOwner = jsonObject.getInt("idusuario");
-                Integer miembros = jsonObject.getInt("numeromiembros");
-                String url = jsonObject.getString("enlacefoto");
-                Bitmap imageResource = ImageDownloader.downloadImage(url);
-                Integer estadoFavorito = jsonObject.getInt("estadofavorito");
 
-                dataList.add(new vistaDeGrupo(nombreGrupo, creador, "Integrantes: "+miembros, imageResource, url, idgrupo, estadoFavorito, idOwner));
+                Bitmap imageResource = ImageDownloader.downloadImage(jsonObject.getString("enlacefoto"));
+
+                dataList.add(new vistadeplaylist(nombre, creador,biografia, idplaylist, imageResource , idOwner));
             }
 
         } catch (JSONException e) {
@@ -115,8 +115,9 @@ public class FetchDataAsyncGruposPrincipal extends AsyncTask<String, Void, List<
         return dataList;
     }
 
-    // Interface to notify when data is fetched
+
+
     public interface DataFetchListener {
-        void onDataFetched(List<vistaDeGrupo> dataList);
+        void onDataFetched(List<vistadeplaylist> dataList);
     }
 }

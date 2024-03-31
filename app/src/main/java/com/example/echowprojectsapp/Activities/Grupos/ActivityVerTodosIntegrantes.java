@@ -10,10 +10,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.proyectogrupo1musicstore.Adapters.IntegrantesAdapter;
-import com.example.proyectogrupo1musicstore.Models.integrantesItem;
-import com.example.proyectogrupo1musicstore.NetworkTasks.GruposNetworkTasks.obtenerIntegrantesGrupoAsyncTask;
-import com.example.proyectogrupo1musicstore.R;
+import com.example.echowprojectsapp.Adapters.IntegrantesAdapter;
+import com.example.echowprojectsapp.Models.integrantesItem;
+import com.example.echowprojectsapp.NetworkTasks.GruposNetworkTasks.obtenerIntegrantesGrupoAsyncTask;
+import com.example.echowprojectsapp.R;
 
 import java.util.ArrayList;
 import java.util.List;

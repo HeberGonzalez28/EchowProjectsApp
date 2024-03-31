@@ -7,7 +7,7 @@ import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.proyectogrupo1musicstore.R;
+import com.example.echowprojectsapp.R;
 
 public class ActivityArchivosPersonales extends AppCompatActivity {
     ImageView subirMultimedia,btnAtrasPlay;

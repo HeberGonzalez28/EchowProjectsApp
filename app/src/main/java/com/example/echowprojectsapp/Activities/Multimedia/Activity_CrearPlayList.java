@@ -8,7 +8,7 @@ import android.widget.ImageButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.proyectogrupo1musicstore.R;
+import com.example.echowprojectsapp.R;
 
 public class Activity_CrearPlayList extends AppCompatActivity {
 

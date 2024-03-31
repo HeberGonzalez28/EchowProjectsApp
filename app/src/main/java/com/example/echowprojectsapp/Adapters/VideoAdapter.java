@@ -11,9 +11,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.proyectogrupo1musicstore.Activities.Reproductores.ActivityReproductoVideo;
-import com.example.proyectogrupo1musicstore.Models.videoItem;
-import com.example.proyectogrupo1musicstore.R;
+import com.example.echowprojectsapp.Activities.Reproductores.ActivityReproductoVideo;
+import com.example.echowprojectsapp.Models.videoItem;
+import com.example.echowprojectsapp.R;
 
 import java.util.List;
 

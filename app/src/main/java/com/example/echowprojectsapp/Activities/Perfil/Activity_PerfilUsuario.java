@@ -19,8 +19,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
-import com.example.proyectogrupo1musicstore.Adapters.AppData;
-import com.example.proyectogrupo1musicstore.R;
+import com.example.echowprojectsapp.Adapters.AppData;
+import com.example.echowprojectsapp.R;
 
 import org.json.JSONException;
 import org.json.JSONObject;

@@ -33,13 +33,13 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.proyectogrupo1musicstore.Adapters.AudioAdapter;
-import com.example.proyectogrupo1musicstore.Models.audioItem;
-import com.example.proyectogrupo1musicstore.NetworkTasks.Multimedia.Activity_SubirMusicaAsyncTask;
-import com.example.proyectogrupo1musicstore.NetworkTasks.Multimedia.BuscarAudioAsyncTask;
-import com.example.proyectogrupo1musicstore.R;
-import com.example.proyectogrupo1musicstore.Utilidades.Token.JwtDecoder;
-import com.example.proyectogrupo1musicstore.Utilidades.Token.token;
+import com.example.echowprojectsapp.Adapters.AudioAdapter;
+import com.example.echowprojectsapp.Models.audioItem;
+import com.example.echowprojectsapp.NetworkTasks.Multimedia.Activity_SubirMusicaAsyncTask;
+import com.example.echowprojectsapp.NetworkTasks.Multimedia.BuscarAudioAsyncTask;
+import com.example.echowprojectsapp.R;
+import com.example.echowprojectsapp.Utilidades.Token.JwtDecoder;
+import com.example.echowprojectsapp.Utilidades.Token.token;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;
@@ -62,7 +62,7 @@ public class Activity_SubirMusica extends AppCompatActivity {
     private static final int PICK_AUDIOS_REQUEST = 1;// Código de solicitud para seleccionar un archivo de audio
     private static final int REQUEST_CODE = 123;
     private static final int REQUEST_CODE_EXTERNAL = 124;
-    private com.example.proyectogrupo1musicstore.Utilidades.Token.token token = new token(this);
+    private com.example.echowprojectsapp.Utilidades.Token.token token = new token(this);
     public static byte[] audioBase64;
     Uri audioUri;
     public static String nombreCancion, artista,album,genero,imagenPortadaBase64;

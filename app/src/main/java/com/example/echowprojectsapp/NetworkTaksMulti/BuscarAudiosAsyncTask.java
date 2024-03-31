@@ -1,4 +1,4 @@
-package com.example.echowprojectsapp.NetworkTasks.GruposNetworkTasks;
+package com.example.echowprojectsapp.NetworkTaksMulti;
 
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -10,8 +10,8 @@ import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.echowprojectsapp.Adapters.CustomAdapterBuscarGrupos;
-import com.example.echowprojectsapp.Models.buscarGrupo;
+import com.example.echowprojectsapp.Adapters.CustomAdapterMusicaVideos;
+import com.example.echowprojectsapp.Models.buscarAudioMusica;
 import com.example.echowprojectsapp.Utilidades.Imagenes.ImageDownloader;
 
 import org.json.JSONArray;
@@ -28,42 +28,37 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BuscarGruposAsyncTask extends AsyncTask<String, Void, Pair<Integer, List<buscarGrupo>>> {
-    private static final String TAG = "BuscarGrupoAsyncTask";
+public class BuscarAudiosAsyncTask extends AsyncTask<String, Void, Pair<Integer, List<buscarAudioMusica>>> {
+    private static final String TAG = "BuscarAudiosAsyncTask";
     private Context context;
     private RecyclerView recyclerView;
-    private CustomAdapterBuscarGrupos adapter;
+    private CustomAdapterMusicaVideos adapter;
     private ProgressDialog progressDialog;
 
-    public BuscarGruposAsyncTask(Context context, RecyclerView recyclerView, CustomAdapterBuscarGrupos adapter) {
+    public BuscarAudiosAsyncTask(Context context, RecyclerView recyclerView, CustomAdapterMusicaVideos adapter) {
         this.context = context;
         this.recyclerView = recyclerView;
         this.adapter = adapter;
+        this.progressDialog = progressDialog;
         progressDialog = new ProgressDialog(context);
         progressDialog.setMessage("Buscando...");
         progressDialog.setCancelable(false);
     }
 
     @Override
-    protected void onPreExecute() {
-        super.onPreExecute();
-        //progressDialog.show();
-    }
-
-    @Override
-    protected Pair<Integer, List<buscarGrupo>> doInBackground(String... params) {
+    protected Pair<Integer, List<buscarAudioMusica>> doInBackground(String... params) {
         String idusuario = params[0];
         String search = params[1];
 
         try {
-            URL url = new URL("https://phpclusters-156700-0.cloudclusters.net/buscarGrupo.php");
+            URL url = new URL("https://phpclusters-156700-0.cloudclusters.net/busccarCanciones.php");
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
             urlConnection.setRequestMethod("POST");
             urlConnection.setRequestProperty("Content-Type", "application/json");
             urlConnection.setDoOutput(true);
 
             JSONObject jsonRequest = new JSONObject();
-            jsonRequest.put("nombre", search);
+            jsonRequest.put("nombrecancion", search);
             jsonRequest.put("idusuario", idusuario);
 
             OutputStream out = new BufferedOutputStream(urlConnection.getOutputStream());
@@ -84,7 +79,7 @@ public class BuscarGruposAsyncTask extends AsyncTask<String, Void, Pair<Integer,
                 reader.close();
                 inputStream.close();
 
-                List<buscarGrupo> result = parseJsonResponse(response.toString());
+                List<buscarAudioMusica> result = parseJsonResponse(response.toString());
                 return new Pair<>(responseCode, result);
             } else {
                 Log.e(TAG, "Error response code: " + responseCode);
@@ -99,11 +94,11 @@ public class BuscarGruposAsyncTask extends AsyncTask<String, Void, Pair<Integer,
     }
 
     @Override
-    protected void onPostExecute(Pair<Integer, List<buscarGrupo>> result) {
+    protected void onPostExecute(Pair<Integer, List<buscarAudioMusica>> result) {
         progressDialog.dismiss();
 
         int responseCode = result.first;
-        List<buscarGrupo> data = result.second;
+        List<buscarAudioMusica> data = result.second;
 
         if (responseCode == HttpURLConnection.HTTP_OK) {
             // Parse and process the JSON data
@@ -113,15 +108,15 @@ public class BuscarGruposAsyncTask extends AsyncTask<String, Void, Pair<Integer,
             }
         } else if (responseCode == HttpURLConnection.HTTP_NOT_FOUND) {
             // No groups found, show a toast
-            Toast.makeText(context, "¡No se encontró ningún grupo!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "¡No se encontró ninguna Musical!", Toast.LENGTH_SHORT).show();
         } else {
             // Handle other response codes or errors
-            Toast.makeText(context, "¡No se encontró ningún grupo!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "¡No se encontró ninguna musica!", Toast.LENGTH_SHORT).show();
         }
     }
 
-    private List<buscarGrupo> parseJsonResponse(String json) {
-        List<buscarGrupo> dataList = new ArrayList<>();
+    private List<buscarAudioMusica> parseJsonResponse(String json) {
+        List<buscarAudioMusica> dataList = new ArrayList<>();
 
         try {
             JSONArray jsonArray = new JSONArray(json);
@@ -130,24 +125,17 @@ public class BuscarGruposAsyncTask extends AsyncTask<String, Void, Pair<Integer,
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
 
                 // Extrae la informacion y crea objetos
-                Integer idgrupo = jsonObject.getInt("idgrupo");
-                String nombre = jsonObject.getString("nombre");
-                String descripcion = jsonObject.getString("descripcion");
-                Integer idOwner = jsonObject.getInt("idusuario");
-                String usuario = jsonObject.getString("usuario");
-                Integer idvisualizacion = jsonObject.getInt("idvisualizacion");
-                Bitmap imageResource = ImageDownloader.downloadImage(jsonObject.getString("enlacefoto"));
-                Integer totalusuarios = jsonObject.getInt("totalusuarios");
-                Integer ismember = jsonObject.getInt("ismember");
+                Integer idaudio = jsonObject.getInt("idaudio");
+                String nombre = jsonObject.getString("nombrecancion");
+                Bitmap imageResource = ImageDownloader.downloadImage(jsonObject.getString("enlaceportada"));
+                String genero = jsonObject.getString("genero");
 
-
-                dataList.add(new buscarGrupo(idgrupo, nombre, descripcion,idOwner, usuario, idvisualizacion, imageResource, totalusuarios, ismember));
+                dataList.add(new buscarAudioMusica(idaudio, nombre,imageResource, genero));
             }
 
         } catch (JSONException e) {
             Log.e(TAG, "Error parsing JSON response: " + e.getMessage());
         }
-
         return dataList;
     }
 }

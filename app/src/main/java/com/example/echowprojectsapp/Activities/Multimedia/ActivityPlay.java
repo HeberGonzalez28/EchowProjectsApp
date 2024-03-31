@@ -25,11 +25,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
-import com.example.proyectogrupo1musicstore.NetworkTaksMulti.CreatePlayListTask;
-import com.example.proyectogrupo1musicstore.R;
-import com.example.proyectogrupo1musicstore.Utilidades.Token.JwtDecoder;
-import com.example.proyectogrupo1musicstore.Utilidades.Token.token;
-import com.example.proyectogrupo1musicstore.activity_personalizado_advertencia;
+import com.example.echowprojectsapp.NetworkTaksMulti.CreatePlayListTask;
+import com.example.echowprojectsapp.R;
+import com.example.echowprojectsapp.Utilidades.Token.JwtDecoder;
+import com.example.echowprojectsapp.Utilidades.Token.token;
+import com.example.echowprojectsapp.activity_personalizado_advertencia;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -47,7 +47,7 @@ public class ActivityPlay extends AppCompatActivity {
     ProgressDialog progressDialog;
     private int idUsuario;
     private int idFavorito;
-    private com.example.proyectogrupo1musicstore.Utilidades.Token.token token = new token(this);
+    private com.example.echowprojectsapp.Utilidades.Token.token token = new token(this);
 
     private static final int PICK_IMAGE_REQUEST = 1;
     private static final int REQUEST_CODE = 123;

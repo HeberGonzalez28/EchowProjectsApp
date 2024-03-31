@@ -15,22 +15,22 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.proyectogrupo1musicstore.Adapters.IntegrantesAdapter;
-import com.example.proyectogrupo1musicstore.Adapters.MusicaAdapter;
-import com.example.proyectogrupo1musicstore.Adapters.VideoAdapter;
-import com.example.proyectogrupo1musicstore.Models.informacionGrupoGeneral;
-import com.example.proyectogrupo1musicstore.Models.integrantesItem;
-import com.example.proyectogrupo1musicstore.Models.musicItem;
-import com.example.proyectogrupo1musicstore.Models.videoItem;
-import com.example.proyectogrupo1musicstore.NetworkTasks.GruposNetworkTasks.InfomacionGeneralGrupoAsyncTask;
-import com.example.proyectogrupo1musicstore.NetworkTasks.GruposNetworkTasks.obtenerAudiosGrupoAsyncTask;
-import com.example.proyectogrupo1musicstore.NetworkTasks.GruposNetworkTasks.obtenerIntegrantesGrupoAsyncTask;
-import com.example.proyectogrupo1musicstore.NetworkTasks.GruposNetworkTasks.obtenerVideosGrupoAsyncTask;
-import com.example.proyectogrupo1musicstore.R;
-import com.example.proyectogrupo1musicstore.Utilidades.Navegacion.NavigationClickListener;
-import com.example.proyectogrupo1musicstore.Utilidades.Navegacion.NavigationGruposInfoClickListener;
-import com.example.proyectogrupo1musicstore.Utilidades.Token.JwtDecoder;
-import com.example.proyectogrupo1musicstore.Utilidades.Token.token;
+import com.example.echowprojectsapp.Adapters.IntegrantesAdapter;
+import com.example.echowprojectsapp.Adapters.MusicaAdapter;
+import com.example.echowprojectsapp.Adapters.VideoAdapter;
+import com.example.echowprojectsapp.Models.informacionGrupoGeneral;
+import com.example.echowprojectsapp.Models.integrantesItem;
+import com.example.echowprojectsapp.Models.musicItem;
+import com.example.echowprojectsapp.Models.videoItem;
+import com.example.echowprojectsapp.NetworkTasks.GruposNetworkTasks.InfomacionGeneralGrupoAsyncTask;
+import com.example.echowprojectsapp.NetworkTasks.GruposNetworkTasks.obtenerAudiosGrupoAsyncTask;
+import com.example.echowprojectsapp.NetworkTasks.GruposNetworkTasks.obtenerIntegrantesGrupoAsyncTask;
+import com.example.echowprojectsapp.NetworkTasks.GruposNetworkTasks.obtenerVideosGrupoAsyncTask;
+import com.example.echowprojectsapp.R;
+import com.example.echowprojectsapp.Utilidades.Navegacion.NavigationClickListener;
+import com.example.echowprojectsapp.Utilidades.Navegacion.NavigationGruposInfoClickListener;
+import com.example.echowprojectsapp.Utilidades.Token.JwtDecoder;
+import com.example.echowprojectsapp.Utilidades.Token.token;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -45,7 +45,7 @@ public class ActivityGrupoInfo extends AppCompatActivity implements InfomacionGe
     RecyclerView recyclerViewIntegrantes, recyclerViewMusica, recyclerViewVideos;
     private int idgrupo;
     ProgressDialog progressDialog;
-    private com.example.proyectogrupo1musicstore.Utilidades.Token.token token = new token(this);
+    private com.example.echowprojectsapp.Utilidades.Token.token token = new token(this);
     private NavigationGruposInfoClickListener navigationClickListener;
     private int idUsuario;
 

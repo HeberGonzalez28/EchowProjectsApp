@@ -19,18 +19,18 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.proyectogrupo1musicstore.Activities.PantallaPrincipal.ActivityPantallaPrincipal;
-import com.example.proyectogrupo1musicstore.Activities.PantallaPrincipal.ActivityVerPlayList;
-import com.example.proyectogrupo1musicstore.Adapters.AudioAdapter;
-import com.example.proyectogrupo1musicstore.Adapters.PlayListAdapter;
-import com.example.proyectogrupo1musicstore.Models.PlayListItem;
-import com.example.proyectogrupo1musicstore.Models.audioItem;
-import com.example.proyectogrupo1musicstore.NetworkTaksMulti.ObtenerPlayListAsyncTask;
-import com.example.proyectogrupo1musicstore.NetworkTaksMulti.informacionGeneralPlayListAstAsyncTask;
-import com.example.proyectogrupo1musicstore.NetworkTasks.Multimedia.obtenerAudiosMultimediaAsyncTask;
-import com.example.proyectogrupo1musicstore.R;
-import com.example.proyectogrupo1musicstore.Utilidades.Token.JwtDecoder;
-import com.example.proyectogrupo1musicstore.Utilidades.Token.token;
+import com.example.echowprojectsapp.Activities.PantallaPrincipal.ActivityPantallaPrincipal;
+import com.example.echowprojectsapp.Activities.PantallaPrincipal.ActivityVerPlayList;
+import com.example.echowprojectsapp.Adapters.AudioAdapter;
+import com.example.echowprojectsapp.Adapters.PlayListAdapter;
+import com.example.echowprojectsapp.Models.PlayListItem;
+import com.example.echowprojectsapp.Models.audioItem;
+import com.example.echowprojectsapp.NetworkTaksMulti.ObtenerPlayListAsyncTask;
+import com.example.echowprojectsapp.NetworkTaksMulti.informacionGeneralPlayListAstAsyncTask;
+import com.example.echowprojectsapp.NetworkTasks.Multimedia.obtenerAudiosMultimediaAsyncTask;
+import com.example.echowprojectsapp.R;
+import com.example.echowprojectsapp.Utilidades.Token.JwtDecoder;
+import com.example.echowprojectsapp.Utilidades.Token.token;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,7 +42,7 @@ public class ActivityPlayList extends AppCompatActivity implements informacionGe
     ImageView fotoPlay;
     DrawerLayout drawerLayout;
     ImageButton openMenuButton, btnAtrasMenuPrincipal;
-    private com.example.proyectogrupo1musicstore.Utilidades.Token.token token = new token(this);
+    private com.example.echowprojectsapp.Utilidades.Token.token token = new token(this);
 
     private int idplaylist;
    // private int idUsuario;

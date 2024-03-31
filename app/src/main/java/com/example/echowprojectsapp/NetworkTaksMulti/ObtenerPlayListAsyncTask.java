@@ -1,11 +1,13 @@
-package com.example.echowprojectsapp.NetworkTasks.GruposNetworkTasks;
+package com.example.echowprojectsapp.NetworkTaksMulti;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import com.example.echowprojectsapp.Models.vistaDeGrupo;
+import com.example.echowprojectsapp.Adapters.PlayListAdapter;
+import com.example.echowprojectsapp.Models.PlayListItem;
 import com.example.echowprojectsapp.Utilidades.Imagenes.ImageDownloader;
 
 import org.json.JSONArray;
@@ -22,25 +24,30 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FetchDataAsyncGruposPrincipal extends AsyncTask<String, Void, List<vistaDeGrupo>> {
 
-    private static final String TAG = "FetchDataAsyncGruposPrincipal";
-    private DataFetchListener dataFetchListener;
+public class ObtenerPlayListAsyncTask extends AsyncTask<String, Void, List<PlayListItem>> {
+
+    private static final String TAG = "ObtenerPlayListAsyncTask";
+    private Context context;
+    private PlayListAdapter adapter;
     ProgressDialog progressDialog;
+    private int tipoProgress;
 
-    public FetchDataAsyncGruposPrincipal(DataFetchListener listener, ProgressDialog progressDialog) {
-        this.dataFetchListener = listener;
+
+    public ObtenerPlayListAsyncTask(Context context, PlayListAdapter adapter, ProgressDialog progressDialog) {
+        this.context = context;
+        this.adapter = adapter;
         this.progressDialog = progressDialog;
     }
 
     @Override
-    protected List<vistaDeGrupo> doInBackground(String... params) {
-        String urlString = params[0]; // URL para el microservicio
-        String idUsuario = params[1]; // idusuario parametro
+    protected List<PlayListItem> doInBackground(String... params) {
+        String idusuario = params[0]; // idUsuario parametro
+
 
         try {
             // construye el URL
-            URL url = new URL(urlString);
+            URL url = new URL("https://phpclusters-156700-0.cloudclusters.net/obtenerPlayList.php");
 
             // Crea la conexion y la abre
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
@@ -50,7 +57,7 @@ public class FetchDataAsyncGruposPrincipal extends AsyncTask<String, Void, List<
 
             // Crea el objeto JSON con el parametro
             JSONObject jsonParams = new JSONObject();
-            jsonParams.put("idusuario", idUsuario);
+            jsonParams.put("idusuario", Integer.valueOf(idusuario));
 
             // Escribe el JSON al output stream
             OutputStream out = new BufferedOutputStream(urlConnection.getOutputStream());
@@ -73,21 +80,24 @@ public class FetchDataAsyncGruposPrincipal extends AsyncTask<String, Void, List<
 
         } catch (Exception e) {
             Log.e(TAG, "Error obteniendo la Información del servidor: " + e.getMessage());
-            progressDialog.dismiss();
         }
 
         return null;
     }
 
+
     @Override
-    protected void onPostExecute(List<vistaDeGrupo> dataList) {
+    protected void onPostExecute(List<PlayListItem> dataList) {
+        progressDialog.dismiss();
         if (dataList != null) {
-            dataFetchListener.onDataFetched(dataList);
+            adapter.setDataList(dataList);
         }
+
     }
 
-    private List<vistaDeGrupo> parseJsonResponse(String json) {
-        List<vistaDeGrupo> dataList = new ArrayList<>();
+
+    private List<PlayListItem> parseJsonResponse(String json) {
+        List<PlayListItem> dataList = new ArrayList<>();
 
         try {
             JSONArray jsonArray = new JSONArray(json);
@@ -96,16 +106,12 @@ public class FetchDataAsyncGruposPrincipal extends AsyncTask<String, Void, List<
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
 
                 // Extrae la informacion y crea objetos
-                Integer idgrupo = jsonObject.getInt("idgrupo");
-                String nombreGrupo = jsonObject.getString("nombre");
-                String creador = jsonObject.getString("usuario");
-                Integer idOwner = jsonObject.getInt("idusuario");
-                Integer miembros = jsonObject.getInt("numeromiembros");
-                String url = jsonObject.getString("enlacefoto");
-                Bitmap imageResource = ImageDownloader.downloadImage(url);
-                Integer estadoFavorito = jsonObject.getInt("estadofavorito");
+                Integer idplaylist = jsonObject.getInt("idplaylist");
+                String nombrePlay = jsonObject.getString("nombre");
+                Bitmap imageResource = ImageDownloader.downloadImage(jsonObject.getString("enlacefoto"));
 
-                dataList.add(new vistaDeGrupo(nombreGrupo, creador, "Integrantes: "+miembros, imageResource, url, idgrupo, estadoFavorito, idOwner));
+
+                dataList.add(new PlayListItem(imageResource, nombrePlay, idplaylist));
             }
 
         } catch (JSONException e) {
@@ -115,8 +121,4 @@ public class FetchDataAsyncGruposPrincipal extends AsyncTask<String, Void, List<
         return dataList;
     }
 
-    // Interface to notify when data is fetched
-    public interface DataFetchListener {
-        void onDataFetched(List<vistaDeGrupo> dataList);
-    }
 }

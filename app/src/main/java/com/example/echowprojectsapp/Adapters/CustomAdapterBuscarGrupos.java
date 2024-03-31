@@ -10,9 +10,9 @@ import android.widget.TextView;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.proyectogrupo1musicstore.Activities.Grupos.ActivityUnirseGrupo;
-import com.example.proyectogrupo1musicstore.Models.buscarGrupo;
-import com.example.proyectogrupo1musicstore.R;
+import com.example.echowprojectsapp.Activities.Grupos.ActivityUnirseGrupo;
+import com.example.echowprojectsapp.Models.buscarGrupo;
+import com.example.echowprojectsapp.R;
 import com.google.gson.Gson;
 
 import java.util.List;

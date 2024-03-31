@@ -14,9 +14,9 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.proyectogrupo1musicstore.Models.infoReproductor;
-import com.example.proyectogrupo1musicstore.R;
-import com.example.proyectogrupo1musicstore.Utilidades.Token.token;
+import com.example.echowprojectsapp.Models.infoReproductor;
+import com.example.echowprojectsapp.R;
+import com.example.echowprojectsapp.Utilidades.Token.token;
 import com.google.android.exoplayer2.MediaItem;
 import com.google.android.exoplayer2.SimpleExoPlayer;
 import com.google.android.exoplayer2.ui.PlayerView;
@@ -45,7 +45,7 @@ public class ActivityReproductor extends AppCompatActivity{
     private PlayerView playerView;
     private ImageButton btnCerrar;
     private String musicaUrl, musicaName,imagen;
-    private com.example.proyectogrupo1musicstore.Utilidades.Token.token token = new token(this);
+    private com.example.echowprojectsapp.Utilidades.Token.token token = new token(this);
 
 
 

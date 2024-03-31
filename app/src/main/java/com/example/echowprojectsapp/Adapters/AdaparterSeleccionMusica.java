@@ -2,7 +2,7 @@ package com.example.echowprojectsapp.Adapters;
 
 import androidx.annotation.NonNull;
 
-import com.example.proyectogrupo1musicstore.Models.audioItem;
+import com.example.echowprojectsapp.Models.audioItem;
 
 import java.util.List;
 

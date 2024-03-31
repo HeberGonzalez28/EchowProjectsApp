@@ -10,9 +10,9 @@ import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.proyectogrupo1musicstore.Adapters.CustomAdapterNuevoGrupoIntegrantes;
-import com.example.proyectogrupo1musicstore.Models.vistaDeNuevoGrupo;
-import com.example.proyectogrupo1musicstore.Utilidades.Imagenes.ImageDownloader;
+import com.example.echowprojectsapp.Adapters.CustomAdapterNuevoGrupoIntegrantes;
+import com.example.echowprojectsapp.Models.vistaDeNuevoGrupo;
+import com.example.echowprojectsapp.Utilidades.Imagenes.ImageDownloader;
 
 import org.json.JSONArray;
 import org.json.JSONException;

@@ -10,14 +10,14 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.proyectogrupo1musicstore.Adapters.CustomAdapter;
-import com.example.proyectogrupo1musicstore.Models.vistaDeGrupo;
-import com.example.proyectogrupo1musicstore.NetworkTasks.GruposNetworkTasks.FetchDataAsyncGruposPrincipal;
-import com.example.proyectogrupo1musicstore.R;
-import com.example.proyectogrupo1musicstore.Utilidades.Navegacion.NavigationClickListener;
-import com.example.proyectogrupo1musicstore.Utilidades.Navegacion.NavigationGruposPrincipalClickListener;
-import com.example.proyectogrupo1musicstore.Utilidades.Token.JwtDecoder;
-import com.example.proyectogrupo1musicstore.Utilidades.Token.token;
+import com.example.echowprojectsapp.Adapters.CustomAdapter;
+import com.example.echowprojectsapp.Models.vistaDeGrupo;
+import com.example.echowprojectsapp.NetworkTasks.GruposNetworkTasks.FetchDataAsyncGruposPrincipal;
+import com.example.echowprojectsapp.R;
+import com.example.echowprojectsapp.Utilidades.Navegacion.NavigationClickListener;
+import com.example.echowprojectsapp.Utilidades.Navegacion.NavigationGruposPrincipalClickListener;
+import com.example.echowprojectsapp.Utilidades.Token.JwtDecoder;
+import com.example.echowprojectsapp.Utilidades.Token.token;
 
 import java.util.List;
 
@@ -29,7 +29,7 @@ public class ActivityGrupoPrincipal extends AppCompatActivity implements FetchDa
     private ImageButton openMenuButton;
     private ProgressDialog progressDialog;
     private NavigationGruposPrincipalClickListener navigationClickListener;
-    private com.example.proyectogrupo1musicstore.Utilidades.Token.token token = new token(this);
+    private com.example.echowprojectsapp.Utilidades.Token.token token = new token(this);
     private int idUsuario;
 
 

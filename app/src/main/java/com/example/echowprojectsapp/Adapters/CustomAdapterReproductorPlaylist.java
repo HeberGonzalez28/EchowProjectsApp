@@ -11,10 +11,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.proyectogrupo1musicstore.Activities.Multimedia.ActivityAgregarPlayListMusica;
-import com.example.proyectogrupo1musicstore.Activities.Multimedia.ActivityModificarPlayList;
-import com.example.proyectogrupo1musicstore.Models.vistadeplaylist;
-import com.example.proyectogrupo1musicstore.R;
+import com.example.echowprojectsapp.Activities.Multimedia.ActivityAgregarPlayListMusica;
+import com.example.echowprojectsapp.Activities.Multimedia.ActivityModificarPlayList;
+import com.example.echowprojectsapp.Models.vistadeplaylist;
+import com.example.echowprojectsapp.R;
 
 import java.util.List;
 

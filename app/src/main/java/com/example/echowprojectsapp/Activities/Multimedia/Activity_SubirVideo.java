@@ -32,13 +32,13 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.proyectogrupo1musicstore.Models.videoItem;
-import com.example.proyectogrupo1musicstore.NetworkTasks.Multimedia.Activity_SubirVideoAsyncTask;
-import com.example.proyectogrupo1musicstore.NetworkTasks.Multimedia.BuscarVideoAsyncTask;
-import com.example.proyectogrupo1musicstore.R;
-import com.example.proyectogrupo1musicstore.Utilidades.Token.JwtDecoder;
-import com.example.proyectogrupo1musicstore.Utilidades.Token.token;
-import com.example.proyectogrupo1musicstore.VideoAdapter;
+import com.example.echowprojectsapp.Models.videoItem;
+import com.example.echowprojectsapp.NetworkTasks.Multimedia.Activity_SubirVideoAsyncTask;
+import com.example.echowprojectsapp.NetworkTasks.Multimedia.BuscarVideoAsyncTask;
+import com.example.echowprojectsapp.R;
+import com.example.echowprojectsapp.Utilidades.Token.JwtDecoder;
+import com.example.echowprojectsapp.Utilidades.Token.token;
+import com.example.echowprojectsapp.VideoAdapter;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;
@@ -55,7 +55,7 @@ public class Activity_SubirVideo extends AppCompatActivity {
     TextView textviewAtrass, txtBuscarArchivos, Archivoss, Inicios;
     ImageView imageViewBuscarArchivos, iconoArchivos,iconInicios;
     CardView buscars,busquedaVideos, seleccionarVideos, btnPrincipalAudio;
-    private com.example.proyectogrupo1musicstore.Utilidades.Token.token token = new token(this);
+    private com.example.echowprojectsapp.Utilidades.Token.token token = new token(this);
     public static String idPlayList = "1";
     public static String idFavorito = "1";
     public static int idUsuario;

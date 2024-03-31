@@ -10,8 +10,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.proyectogrupo1musicstore.Models.PlayListItem;
-import com.example.proyectogrupo1musicstore.R;
+import com.example.echowprojectsapp.Models.PlayListItem;
+import com.example.echowprojectsapp.R;
 
 import java.util.List;
 

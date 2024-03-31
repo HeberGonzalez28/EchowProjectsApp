@@ -12,10 +12,10 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.proyectogrupo1musicstore.Activities.Grupos.ActivityGrupoInfo;
-import com.example.proyectogrupo1musicstore.Activities.Grupos.ActivityGruposBuscar;
-import com.example.proyectogrupo1musicstore.Models.informacionGruposFavoritos;
-import com.example.proyectogrupo1musicstore.R;
+import com.example.echowprojectsapp.Activities.Grupos.ActivityGrupoInfo;
+import com.example.echowprojectsapp.Activities.Grupos.ActivityGruposBuscar;
+import com.example.echowprojectsapp.Models.informacionGruposFavoritos;
+import com.example.echowprojectsapp.R;
 
 import java.util.List;
 

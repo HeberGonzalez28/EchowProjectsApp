@@ -12,13 +12,13 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 
-import com.example.proyectogrupo1musicstore.Models.buscarGrupo;
-import com.example.proyectogrupo1musicstore.NetworkTasks.GruposNetworkTasks.InsertarIntegranteAsyncTask;
-import com.example.proyectogrupo1musicstore.R;
-import com.example.proyectogrupo1musicstore.Utilidades.Navegacion.NavigationClickListener;
-import com.example.proyectogrupo1musicstore.Utilidades.Token.JwtDecoder;
-import com.example.proyectogrupo1musicstore.Utilidades.Token.token;
-import com.example.proyectogrupo1musicstore.Utilidades.UI.ConfirmationDialog;
+import com.example.echowprojectsapp.Models.buscarGrupo;
+import com.example.echowprojectsapp.NetworkTasks.GruposNetworkTasks.InsertarIntegranteAsyncTask;
+import com.example.echowprojectsapp.R;
+import com.example.echowprojectsapp.Utilidades.Navegacion.NavigationClickListener;
+import com.example.echowprojectsapp.Utilidades.Token.JwtDecoder;
+import com.example.echowprojectsapp.Utilidades.Token.token;
+import com.example.echowprojectsapp.Utilidades.UI.ConfirmationDialog;
 import com.google.gson.Gson;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
@@ -38,7 +38,7 @@ public class ActivityUnirseGrupo extends AppCompatActivity {
     private buscarGrupo object;
     private String tipo;
     ImageView imageGrupo;
-    private com.example.proyectogrupo1musicstore.Utilidades.Token.token token = new token(this);
+    private com.example.echowprojectsapp.Utilidades.Token.token token = new token(this);
     private int idUsuario;
 
     @Override

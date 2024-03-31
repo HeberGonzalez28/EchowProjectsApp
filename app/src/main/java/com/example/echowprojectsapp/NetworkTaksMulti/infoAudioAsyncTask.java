@@ -1,10 +1,10 @@
-package com.example.echowprojectsapp.NetworkTasks.PerfilNetworkTasks;
+package com.example.echowprojectsapp.NetworkTaksMulti;
 
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.util.Log;
 
-import com.example.echowprojectsapp.Models.informacionPerfil;
+import com.example.echowprojectsapp.Models.infoReproductor;
 import com.example.echowprojectsapp.Utilidades.Imagenes.ImageDownloader;
 
 import org.json.JSONArray;
@@ -21,21 +21,18 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-public class InformacionPerfilAsyncTask extends AsyncTask<String, Void, List<informacionPerfil>> {
+public class infoAudioAsyncTask extends AsyncTask<String, Void, List<infoReproductor>> {
 
-    private static final String TAG = "InformacionPerfilAsyncTask";
+    private static final String TAG = "infoAudioAsyncTask";
     private DataFetchListener dataFetchListener;
-
-    public InformacionPerfilAsyncTask(DataFetchListener listener) {
+    public infoAudioAsyncTask(DataFetchListener listener) {
         this.dataFetchListener = listener;
     }
 
     @Override
-    protected List<informacionPerfil> doInBackground(String... params) {
+    protected List<infoReproductor> doInBackground(String... params) {
         String urlString = params[0]; // URL para el microservicio
-        String idusuario = params[1]; // idgrupo parametro
-        String idusuarioactivo = params[2];
-
+        String idUsuario = params[1]; // idplaylist parametro
 
         try {
             // construye el URL
@@ -50,8 +47,7 @@ public class InformacionPerfilAsyncTask extends AsyncTask<String, Void, List<inf
 
             // Crea el objeto JSON con el parametro
             JSONObject jsonParams = new JSONObject();
-            jsonParams.put("idusuario", Integer.valueOf(idusuario));
-            jsonParams.put("idusuarioactivo", Integer.valueOf(idusuarioactivo));
+            jsonParams.put("idusuario", Integer.valueOf(idUsuario));
 
             // Escribe el JSON al output stream
             OutputStream out = new BufferedOutputStream(urlConnection.getOutputStream());
@@ -76,44 +72,41 @@ public class InformacionPerfilAsyncTask extends AsyncTask<String, Void, List<inf
 
                 return parseJsonResponse(response.toString());
             } else {
-                Log.e("InformacionPerfilAsyncTask", "Error response code: " + responseCode);
+                Log.e("infoAudioAsyncTask", "Error response code: " + responseCode);
             }
 
         } catch (Exception e) {
             Log.e(TAG, "Error obteniendo la Información del servidor: " + e.getMessage());
         }
-
         return null;
     }
 
     @Override
-    protected void onPostExecute(List<informacionPerfil> dataList) {
+    protected void onPostExecute(List<infoReproductor> dataList) {
         if (dataList != null) {
             dataFetchListener.onDataFetched(dataList);
         }
     }
 
-    private List<informacionPerfil> parseJsonResponse(String json) {
-        List<informacionPerfil> dataList = new ArrayList<>();
+
+    private List<infoReproductor> parseJsonResponse(String json) {
+        List<infoReproductor> dataList = new ArrayList<>();
 
         try {
             JSONArray jsonArray = new JSONArray(json);
 
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject jsonObject = jsonArray.getJSONObject(i);
-
+               //modificado
                 // Extrae la informacion y crea objetos
-                Integer idusuario = jsonObject.getInt("idusuario");
-                String nombre = jsonObject.getString("nombrecompleto");
-                String correo = jsonObject.getString("correo");
-                String usuario = jsonObject.getString("usuario");
-                Bitmap imageResource = ImageDownloader.downloadImage(jsonObject.getString("enlacefoto"));
-                Integer idvisualizacion = jsonObject.getInt("idvisualizacion");
-                Integer numeroSeguidores = jsonObject.getInt("numeroseguidores");
-                Integer numeroSeguidos = jsonObject.getInt("numeroseguidos");
-                Integer seguidor = jsonObject.getInt("sigue_al_asuario");
+                Integer idaudio = jsonObject.getInt("idaudio");
+                String nombre = jsonObject.getString("nombrecancion");
+                Integer idowner = jsonObject.getInt("idusuario");
+                String url = jsonObject.getString("enlaceaudio");
+                Log.d("Enlaceaudio",url);
+                Bitmap imageResource = ImageDownloader.downloadImage(jsonObject.getString("enlaceportada"));
 
-                dataList.add(new informacionPerfil(idusuario, nombre, correo, usuario, imageResource, idvisualizacion, numeroSeguidores, numeroSeguidos, seguidor));
+                dataList.add(new infoReproductor(idaudio, nombre, idowner,  url, imageResource));
             }
 
         } catch (JSONException e) {
@@ -123,8 +116,9 @@ public class InformacionPerfilAsyncTask extends AsyncTask<String, Void, List<inf
         return dataList;
     }
 
-    // Interface to notify when data is fetched
     public interface DataFetchListener {
-        void onDataFetched(List<informacionPerfil> dataList);
+        void onPlayClick(String audioUrl);
+
+        void onDataFetched(List<infoReproductor> dataList);
     }
 }
