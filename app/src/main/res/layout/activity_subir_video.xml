@@ -5,14 +5,14 @@
     android:id="@+id/drawer_layouts"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondodetodaslaspantallas"
+    android:background="@drawable/background"
     tools:context=".Activities.Multimedia.Activity_SubirVideo">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/layoutVideos"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/fondodetodaslaspantallas"
+        android:background="@drawable/Echowfondo"
         tools:context=".SubirMusica">
 
         <RelativeLayout

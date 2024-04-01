@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#00000000"
+    android:background="@drawable/background"
     android:padding="16dp">
 
     <ImageView
@@ -12,7 +12,7 @@
         android:layout_width="338dp"
         android:layout_height="198dp"
         android:layout_centerInParent="true"
-        android:src="@drawable/alertacamposvacios"
+        android:src="@drawable/alerta"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"

@@ -18,7 +18,7 @@
             android:layout_width="220dp"
             android:layout_height="73dp"
             android:contentDescription="App Logo"
-            android:src="@drawable/logopantallaprincipal"/>
+            android:src="@drawable/Echowlogo"/>
 
         <TextView
             android:layout_width="224dp"

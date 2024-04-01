@@ -124,8 +124,8 @@ public class ActivityChat extends AppCompatActivity implements MessageAdapter.On
         textviewNombreGrupo = findViewById(R.id.groupName);
         imgGrupo = findViewById(R.id.groupImage);
         mensaje = findViewById(R.id.messageField);
-        closePlayer = findViewById(R.id.exo_close);
-        seekBar = findViewById(R.id.seekBar);
+        //closePlayer = findViewById(R.id.exo_close);
+        //seekBar = findViewById(R.id.seekBar);
 
         //Asigna los valores
         textviewNombreGrupo.setText(nombreGrupo);

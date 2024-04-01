@@ -5,7 +5,7 @@
     android:id="@+id/drawer_layoutGruposUnirse"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondodetodaslaspantallas"
+    android:background="@drawable/background"
     tools:context=".Activities.Grupos.ActivityUnirseGrupo">
 
     <ScrollView
@@ -48,7 +48,7 @@
                         android:id="@+id/imageviewUnirseImagenGrupo"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        app:srcCompat="@drawable/logopantallaprincipal"
+                        app:srcCompat="@drawable/Echowlogo"
                         android:scaleType="fitXY"/>
 
                 </androidx.cardview.widget.CardView>

@@ -30,7 +30,7 @@
             android:layout_width="250dp"
             android:layout_height="250dp"
             android:layout_marginBottom="8dp"
-            android:src="@drawable/fondomusica"></ImageView>
+            android:src="@drawable/portada2"></ImageView>
 
         <RelativeLayout
             android:layout_width="match_parent"
