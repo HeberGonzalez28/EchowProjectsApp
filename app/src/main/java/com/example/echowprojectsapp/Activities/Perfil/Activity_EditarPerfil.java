@@ -40,7 +40,6 @@ import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
 import com.example.echowprojectsapp.Activities.Auth.Activity_CambiarContrasena;
 import com.example.echowprojectsapp.Activities.Auth.activity_login;
-import com.example.echowprojectsapp.Activities.Auth.activity_personalizada_huella;
 import com.example.echowprojectsapp.NetworkTasks.PerfilNetworkTasks.UpdateImagenPerfilAsyncTask;
 import com.example.echowprojectsapp.R;
 import com.example.echowprojectsapp.Utilidades.AppPreferences.AppPreferences;
