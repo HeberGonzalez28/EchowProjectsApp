@@ -5,7 +5,7 @@
     android:id="@+id/drawer_layoutGruposBuscarMusica"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/Echowfondo"
+    android:background="@drawable/echowfondo"
     tools:context=".Activities.Multimedia.Activity_BuscarMusica">
 
     <ScrollView
@@ -16,7 +16,7 @@
             android:id="@+id/layoutBuscarAudios"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/Echowfondo"
+            android:background="@drawable/echowfondo"
             tools:context=".Activities.Multimedia.Activity_BuscarMusica">
 
             <RelativeLayout

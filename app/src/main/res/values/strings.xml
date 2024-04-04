@@ -111,7 +111,7 @@
 
 
     <!--Gustavo Brocato -->
-    <string name="appName">Music Store HN</string>
+    <string name="appName">Echow App</string>
     <string name="resultBusqueda">Busqueda Grupo</string>
     <string name="NuevoGrupo">Nuevo Grupo</string>
     <string name="BuscarGrupo">Buscar Grupo</string>
@@ -148,7 +148,7 @@
 
     <!--Jonathan-->
     <string name="btnCrearPlayList">Crear PlayList</string>
-    <string name="titulo">Music Store HN</string>
+    <string name="titulo">Echow App</string>
 
     <string name="nombresvideo">Nombre del video</string>
     <string name="title_activity_subir_archivo">SubirArchivo</string>

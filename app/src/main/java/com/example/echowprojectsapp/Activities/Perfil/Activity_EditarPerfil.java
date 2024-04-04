@@ -105,8 +105,6 @@ public class Activity_EditarPerfil extends AppCompatActivity {
         imgCambiarPerfil = findViewById(R.id.imgcambiarPerfil);
         imgFoto = findViewById(R.id.imgFoto);
         chePerfil = findViewById(R.id.chePerfil);
-        checkHabilitarHuella = findViewById(R.id.cheHuella);
-        txtviewHabilitarHuella = findViewById(R.id.textviewHabilitarHuella);
         checkBoxNotifications = findViewById(R.id.cheNotificacion);
         /*Cargar de forma automáticamente el estado del checkbox desde la base de datos*/
         cargarEstadoCheckbox();
@@ -441,7 +439,7 @@ public class Activity_EditarPerfil extends AppCompatActivity {
     }
 
     //Verificar si el dispositivo tiene una huella configurada
-    public void verificarExistenciaHuella(){
+    /*public void verificarExistenciaHuella(){
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             FingerprintManager fingerprintManager = (FingerprintManager) getApplicationContext().getSystemService(Context.FINGERPRINT_SERVICE);
             if (fingerprintManager != null && fingerprintManager.isHardwareDetected()) {
@@ -461,7 +459,7 @@ public class Activity_EditarPerfil extends AppCompatActivity {
                 }
             }
         }
-    }
+    }*/
 
     //Metodo para ver el estado del checkbox y asi habilitar/deshabilitar el acceso con la huella
     public void verificarCheck_Huella(){
@@ -479,7 +477,7 @@ public class Activity_EditarPerfil extends AppCompatActivity {
                     //Si doy click y no hay huellas me lanza la advertencia
                     //Si doy click y si hay huellas entonces le pido que la verifique
                     //Finalmente dejo seleccionado el checkbox
-                    verificarExistenciaHuella();
+                    //verificarExistenciaHuella();
                     //Al cargar nuevamente la pantalla de editar perfil, ese chechbox debe reflejar el estado en 0 u 1 del usuario
                     //Al insertar el usuario ese campo de autenticacion debera estar en 0 por defecto indicando que inicialmente el usuario no tiene acceso a este tipo de autenticación
                 }

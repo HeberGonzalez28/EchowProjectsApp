@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/Echowdesarrolladores"
+    android:background="@drawable/echowdesarrolladores"
     tools:context=".Activities.AcercaDe.ActivityAcercaDe">
 
 
@@ -16,7 +16,7 @@
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/Echowlogo" />
+        app:srcCompat="@drawable/echowlogo" />
 
     <TextView
         android:id="@+id/textView9"

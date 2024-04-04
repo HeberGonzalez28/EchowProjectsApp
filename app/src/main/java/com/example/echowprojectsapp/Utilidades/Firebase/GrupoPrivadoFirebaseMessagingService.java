@@ -1,12 +1,15 @@
 package com.example.echowprojectsapp.Utilidades.Firebase;
 
+import android.Manifest;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.util.Log;
 
 import androidx.annotation.NonNull;
+import androidx.core.app.ActivityCompat;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 
@@ -36,11 +39,11 @@ public class GrupoPrivadoFirebaseMessagingService extends FirebaseMessagingServi
 
         if (remoteMessage.getData().size() > 0) {
             Log.d(TAG, "Message data payload: " + remoteMessage.getData());
-            tipo="request";
+            tipo = "request";
 
             // Controla el payload que contiene la notificacion
             handleDataMessage(remoteMessage.getData(), remoteMessage.getNotification());
-        }else{
+        } else {
             if (remoteMessage.getNotification() != null) {
                 Log.d(TAG, "Message Notification Body: " + remoteMessage.getNotification().getBody());
                 tipo = "simple";
@@ -51,7 +54,7 @@ public class GrupoPrivadoFirebaseMessagingService extends FirebaseMessagingServi
         }
 
         //App is not running
-        if (!MyApplication.isAppRunning()==false) {
+        if (!MyApplication.isAppRunning() == false) {
             handleNotificationClickAction(remoteMessage);
         }
 
@@ -98,7 +101,7 @@ public class GrupoPrivadoFirebaseMessagingService extends FirebaseMessagingServi
         saveNotificationToDatabase(title, body, idUsuario, idGrupo, usuario);
 
         notificationValue = AppPreferences.getUserScore(this);
-        if(notificationValue==1){
+        if (notificationValue == 1) {
             //Muestra la notificaion en el tray
             displayNotification(title, body);
         }
@@ -113,7 +116,7 @@ public class GrupoPrivadoFirebaseMessagingService extends FirebaseMessagingServi
         saveNotificationToDatabase(title, body, null, null, null);
 
         notificationValue = AppPreferences.getUserScore(this);
-        if(notificationValue==1){
+        if (notificationValue == 1) {
             // Muestra la notificacion en el tray
             displayNotification(title, body);
         }
@@ -158,11 +161,21 @@ public class GrupoPrivadoFirebaseMessagingService extends FirebaseMessagingServi
                 .setAutoCancel(true); // Auto-cancel the notification when clicked
 
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
         notificationManager.notify(0, notificationBuilder.build());
     }
 
     //Metodo para mostrar la notificacion en el tray
-   private void displayNotification(String title, String body) {
+    private void displayNotification(String title, String body) {
         // Construye y muestra la notificacion
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(this, "channel_id")
                 .setSmallIcon(R.drawable.cargando)
@@ -172,6 +185,16 @@ public class GrupoPrivadoFirebaseMessagingService extends FirebaseMessagingServi
 
         NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
         if (NotificationManagerCompat.from(this).areNotificationsEnabled()) {
+            if (ActivityCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
+                // TODO: Consider calling
+                //    ActivityCompat#requestPermissions
+                // here to request the missing permissions, and then overriding
+                //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+                //                                          int[] grantResults)
+                // to handle the case where the user grants the permission. See the documentation
+                // for ActivityCompat#requestPermissions for more details.
+                return;
+            }
             notificationManager.notify(0, notificationBuilder.build());
         } else {
             // Handle the case where notifications are disabled
