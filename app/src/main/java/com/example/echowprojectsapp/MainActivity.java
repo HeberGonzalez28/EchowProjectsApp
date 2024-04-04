@@ -12,7 +12,7 @@ import android.widget.ProgressBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
-import com.example.echowprojectsapp.Activities.Auth.activity_principal_login;
+import com.example.echowprojectsapp.Activities.Auth.activity_login;
 import com.example.echowprojectsapp.Activities.PantallaPrincipal.ActivityPantallaPrincipal;
 import com.example.echowprojectsapp.Utilidades.Token.token;
 import com.google.firebase.FirebaseApp;
@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void irAPantallaLogin() {
         // Intent para ir a la actividad de inicio de sesión
-        Intent intent = new Intent(this, activity_principal_login.class);
+        Intent intent = new Intent(this, activity_login.class);
         startActivity(intent);
         finish();
     }

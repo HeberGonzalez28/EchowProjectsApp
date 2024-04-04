@@ -4,138 +4,218 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
-    tools:context=".Screens.Auth.LoginActivity">
+    tools:context=".Activities.Auth.activity_login"
+    android:background="@drawable/background">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginBottom="30dp"
-        android:orientation="vertical">
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="200dp"
-            android:layout_height="200dp"
-            android:layout_gravity="center"
-            android:src="@drawable/login" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Welcome back!"
-            android:textSize="30dp"
-            android:layout_gravity="center"
-            android:textStyle="bold"
-            android:layout_marginTop="20dp" />
-
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="35dp"
-            android:text="Correo Electronico" />
-
-        <EditText
-            android:id="@+id/txtEmail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="10dp"
-            android:background="@color/white"
-            android:ems="10"
-            android:hint="Email"
-            android:inputType="textEmailAddress"
-            android:minHeight="48dp"
-            android:padding="8dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+        <!---->
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="20dp"
-            android:orientation="horizontal">
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="60dp" />
+
+            <ImageView
+                android:id="@+id/imgviewIconoLogin"
+                android:layout_width="112dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:background="@drawable/logoiniciosesion"></ImageView>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="15dp" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/txtviewLoginTitulo"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Password" />
+                android:layout_gravity="center"
+                android:fontFamily="@font/fuente_jost_global"
+                android:text="@string/login"
+                android:textColor="#FFFFFF"
+                android:textSize="18sp"
+                android:textStyle="bold"></TextView>
 
-            <TextView
-                android:id="@+id/txtOlvidopassword"
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout5"
+                android:layout_width="277dp"
+                android:layout_height="179dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:orientation="vertical">
+
+
+                <!---Nombre de Usuario-->
+                <TextView
+                    android:id="@+id/txtviewRegistrarNombres"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/fuente_jost_global"
+                    android:text="@string/textviewLoginUsuario"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp" />
+
+                <EditText
+                    android:id="@+id/txtRegistrarUsuario"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:background="@drawable/edittext"
+                    android:inputType="text"
+                    android:textSize="15sp"
+                    tools:ignore="SpeakableTextPresentCheck">
+
+                </EditText>
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="21dp" />
+
+                <!---Password-->
+                <TextView
+                    android:id="@+id/txtviewLoginPassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/fuente_jost_global"
+                    android:text="@string/textviewLoginPassword"
+                    android:textColor="#FFFFFF"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp" />
+
+                <EditText
+                    android:id="@+id/txtLoginPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="39dp"
+                    android:background="@drawable/edittext"
+
+                    android:inputType="text|textPassword"
+
+                    android:textSize="15sp"></EditText>
+
+
+
+            </LinearLayout>
+
+            <!---Área de checkbox y enlace-->
+
+            <!---Área de datos bimetricos-->
+
+            <!---Área de botones-->
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="17dp" />
+            <LinearLayout
+                android:id="@+id/linearLayout6"
+                android:layout_width="278dp"
+                android:layout_height="47dp"
+                android:layout_gravity="center"
+
+                android:orientation="horizontal"
+                android:paddingLeft="-10dp">
+
+                <!---Checkbox-->
+                <CheckBox
+                    android:id="@+id/cbrecordarLogin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:checked="true"
+                    android:fontFamily="@font/fuente_jost_global"
+                    android:text="@string/checkLoginRecordar"
+                    android:textColor="#FFFDFD"
+                    android:textColorHighlight="#FFFFFF"
+                    android:textColorLink="#FFFCFC"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    tools:ignore="TouchTargetSizeCheck">
+
+                </CheckBox>
+
+                <!---¿Olvido su contraseña?-->
+                <TextView
+                    android:id="@+id/txtOlvidaPassword"
+                    android:layout_width="150dp"
+                    android:layout_height="25dp"
+                    android:layout_marginStart="35dp"
+                    android:fontFamily="@font/fuente_jost_global"
+                    android:text="@string/txtviewOlvidaPassword"
+                    android:textColor="#FFFDFD"
+                    android:textSize="13sp"
+                    android:textStyle="bold"></TextView>
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="33dp" />
+
+            <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:textColor="@color/white"
-                android:textStyle="bold"
-                android:text="Olvido su contraseña?" />
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <!---Boton de loguiarse-->
+                <Button
+                    android:id="@+id/btnLoginEntrar"
+                    android:layout_width="115dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/button"
+                    android:fontFamily="@font/fuente_jost_global"
+                    android:paddingTop="-5dp"
+                    android:text="INICIAR SESION"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"
+                    tools:ignore="TextContrastCheck,VisualLintButtonSize,TouchTargetSizeCheck" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:text="o"
+                    android:textColor="#FFFFFF"></TextView>
+
+                <!---Boton de crear una cuenta-->
+                <Button
+                    android:id="@+id/btnRegistrarCrear"
+                    android:layout_width="115dp"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="-6dp"
+                    android:background="@color/white"
+                    android:fontFamily="@font/fuente_jost_global"
+                    android:text="@string/btnLoginRegistrarse"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    tools:ignore="TextContrastCheck,VisualLintButtonSize,TouchTargetSizeCheck" />
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="107dp" />
         </LinearLayout>
-
-        <EditText
-            android:id="@+id/txtPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="5dp"
-            android:layout_marginRight="10dp"
-            android:background="@color/white"
-            android:ems="10"
-            android:hint="Contraseña"
-            android:inputType="textPassword"
-            android:minHeight="48dp"
-            android:padding="8dp" />
-
-        <CheckBox
-            android:id="@+id/cbrecordarLogin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="3dp"
-            android:text="Recordar login" />
-
-        <Button
-            android:id="@+id/btnLogin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="45dp"
-            android:text="Login" />
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="5dp"
-            android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/textView8"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_margin="0dp"
-                android:layout_weight="9"
-                android:text="Aun no tienes una cuenta?"
-                android:textStyle="bold" />
-
-            <Button
-                android:id="@+id/btnRegistrar"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="6"
-                android:text="Registrate aqui"
-                android:textColor="@color/white2"
-                android:textStyle="bold"
-                tools:ignore="DuplicateIds" />
-        </LinearLayout>
-    </LinearLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -65,12 +65,12 @@ public class activity_login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         /*Amarrando las variables con el elemento de la interfaz*/
-        btnLoginEntrar = (Button) findViewById(R.id.btnRegistrar);
-        btnLoginRegistrarse = (Button) findViewById(R.id.btnRegistrar);
+        btnLoginEntrar = (Button) findViewById(R.id.btnLoginEntrar);
+        btnLoginRegistrarse = (Button) findViewById(R.id.btnRegistrarCrear);
 
-        txtLoginUsuario = (EditText) findViewById(R.id.txtEmail);
-        txtLoginPassword = (EditText) findViewById(R.id.txtPassword);
-        txtviewOlvidaPassword = (TextView) findViewById(R.id.txtOlvidopassword);
+        txtLoginUsuario = (EditText) findViewById(R.id.txtRegistrarUsuario);
+        txtLoginPassword = (EditText) findViewById(R.id.txtLoginPassword);
+        txtviewOlvidaPassword = (TextView) findViewById(R.id.txtOlvidaPassword);
 
         recordarInicioSesion = (CheckBox) findViewById(R.id.cbrecordarLogin);
 
